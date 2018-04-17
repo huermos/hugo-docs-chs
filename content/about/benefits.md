@@ -3,18 +3,9 @@ title: 静态网站生成器的优势
 linktitle: 静态的优势
 description: 优秀的性能，安全性和易用性只是静态网站生成器吸引人的部分原因。
 date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-keywords: [ssg,static,performance,security]
-menu:
-  docs:
-    parent: "about"
-    weight: 30
+translate: 2018-04-16
 weight: 30
 sections_weight: 30
-draft: false
-aliases: []
-toc: false
 ---
 
 静态网站生成器的目的是将内容以HTML的方式呈现。网络上所见到的大多是动态网站生成器。他们运行在HTTP服务器上，用来为用户的每次访问创建相应的HTML网页。
@@ -23,9 +14,9 @@ toc: false
 
 Hugo提前将所有的文件在你的电脑上转化为HTML网页。因此在你上传网页到托管HTTP服务器的计算机之前，你可以在本地访问这些文件。由于这些HTML网页不是动态生成的，因此我们称Hugo为“静态网站生成器”。
 
-静态网站生成器有许多优势。最显著的便是高性能。HTTP服务器*非常*擅长发送文件，因此你可以更高效的使用小部分CPU和内存性能提供相同数量的页面。
+静态网站生成器有许多优势，最显著的便是高性能。HTTP服务器*十分*擅长发送文件，因此你可以更高效的使用小部分CPU和内存性能提供相同数量的页面。
 
-## 更多关于静态网站生成器
+## 更多关于静态网站生成器的介绍
 
 * ["静态网站生成器简介", David Walsh][https://davidwalsh.name/introduction-static-site-generators]
 * ["Hugo与Wordpress页面加载速度对比: Hugo秒杀Wordpress", GettingThingsTech][http://www.oreilly.com/web-platform/free/files/static-site-generators.pdf]

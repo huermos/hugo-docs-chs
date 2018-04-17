@@ -11,7 +11,7 @@ menu:
     weight: 20
 weight: 20
 sections_weight: 20
-draft: false
+draft: true
 aliases: [/about/features]
 toc: true
 ---

@@ -1,15 +1,27 @@
 ---
-title: Apache许可证
-linktitle: 许可证
-description: 0.15版本及以后的发行版本Hugo适用于Apache 2.0许可证。
+title: Apache License
+linktitle: License
+description: Hugo v0.15 and later are released under the Apache 2.0 license.
 date: 2016-02-01
-translate: 2018-04-16
+publishdate: 2016-02-01
+lastmod: 2016-03-02
+categories: ["about hugo"]
+keywords: ["License","apache"]
+menu:
+  docs:
+    parent: "about"
+    weight: 60
 weight: 60
 sections_weight: 60
+aliases: [/meta/license]
+draft: true
+toc: true
 ---
 
-> 0.15版本及以后的发行版本Hugo适用于Apache 2.0许可证。
-> 更早期的发行版本Hugo适用于[Simple Public License](https://opensource.org/licenses/Simple-2.0)。
+{{% note %}}
+Hugo v0.15 and later are released under the Apache 2.0 license.
+Earlier versions of Hugo were released under the [Simple Public License](https://opensource.org/licenses/Simple-2.0).
+{{% /note %}}
 
 _Version 2.0, January 2004_ <br>
 <http://www.apache.org/licenses/LICENSE-2.0>
@@ -137,7 +149,7 @@ _END OF TERMS AND CONDITIONS_
 
 To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets `[]` replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same “printed page” as the copyright notice for easier identification within third-party archives.
 
-```
+{{< code file="apache-notice.txt" download="apache-notice.txt" >}}
 Copyright [yyyy] [name of copyright owner]
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -151,4 +163,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-```
+{{< /code >}}

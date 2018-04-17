@@ -12,7 +12,7 @@ menu:
     parent: "about"
     weight: 1
 weight: 1
-draft: false
+draft: true
 aliases: [/about-hugo/,/docs/]
 toc: false
 ---

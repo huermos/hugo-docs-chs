@@ -1,24 +1,16 @@
 ---
 title: Hugo 0.32 HOWTO
+linktitle: 版本0.32更新
 description: 关于页面组织，图像处理等。
-date: 2017-12-28
-keywords: [ssg,static,performance,security]
-menu:
-  docs:
-    parent: "about"
-    weight: 10
+date: 2017-02-01
+translate: 2018-04-16
 weight: 10
 sections_weight: 10
-draft: false
-aliases: []
-toc: true
-images:
-- images/blog/sunset.jpg
 ---
 
-> 此页面内容属于其他部分，但放在此处以便快速查阅并运行。
+> 本页面内容为0.32版本更新内容，将在日后移动到其相应的页面。临时置于此处供快速参考和调试。
 
-另请参阅[bep](https://github.com/bep/)的这个demo，这个挪威人提供了这些新功能：
+另请参阅[bep](https://github.com/bep/)的这个demo，他提供了这些新功能：
 
 * http://hugotest.bep.is
 * https://github.com/bep/hugotest
@@ -33,27 +25,24 @@ images:
 
 > Hugo允许你使用任何符合MIME的文件类型（如`json`就被完美支持）。如果你想要与众不同，Hugo也允许你定义你自己的[媒体类型](/templates/output-formats/#media-types)。
 
-The 3 page bundles marked in red explained from top to bottom:
+上图中的三个红框分别表示以下三项内容：
 
-1. The home page with one image resource (`1-logo.png`)
-2. The blog section with two images resources and two pages resources (`content1.md`, `content2.md`). Note that the `_index.md` represents the URL for this section.
-3. An article (`hugo-is-cool`) with a folder with some images and one content resource (`cats-info.md`). Note that the `index.md` represents the URL for this article.
+1. 带有一张图片的首页（`1-logo.png`）
+2. 带有两张图片和两篇文章（`content1.md`，`content2.md`）的博客页。注意`_index.md`是本章节的URL。
+3. 带有内附两张图片的文件夹和一个内容（`cats-info.md`）的文章（`hugo-is-cool`）。注意`index.md`是此文章的URL。
 
-The content files below `blog/posts` are just regular standalone pages.
+而红框外的`blog/posts`是常规的独立页面。
 
-{{% note %}}
-Note that changes to any resource inside the `content` folder will trigger a reload when running in watch (aka server or live reload mode), it will even work with `--navigateToChanged`.
-{{% /note %}}
+> 注意，如果hugo运行在watch（aka服务或实时预览模式）或`--navigateToChanged`下，修改`content`文件夹内任何文件都会重新加载预览页面。
 
-#### Sort Order
+#### 排序
 
-* Pages are sorted according to standard Hugo page sorting rules.
-* Images and other resources are sorted in lexicographical order.
+* 所有页面默认按照标准Hugo排序规则进行排序
+* 图片和其他文件按首字母排序
 
-### Handle Page Resources in Templates
+### 处理模板中的页面资源
 
-
-#### List all Resources
+#### 列出所有资源
 
 ```go-html-template
 {{ range .Resources }}
@@ -61,21 +50,20 @@ Note that changes to any resource inside the `content` folder will trigger a rel
 {{ end }}
 ```
 
-For an absolute URL, use `.Permalink`.
+对于绝对URL，请使用`.Permalink`。
 
-**Note:** The permalink will be relative to the content page, respecting permalink settings. Also, included page resources will not have a value for `RelPermalink`.
+**注意：**固定连接（permalink）与内容页面有关，谨慎设置固定连接的参数。此外，被包含的页面资源将不具有`RelPermalink`值。
 
-#### List All Resources by Type
+#### 按类型列出所有资源
 
 ```go-html-template
 {{ with .Resources.ByType "image" }}
 {{ end }}
-
 ```
 
-Type here is `page` for pages, else the main type in the MIME type, so `image`, `json` etc.
+如果在此处使用`page`将表示网页（pages）。除此之外，你可以使用MIME中的其他类型，包括`image`和`json`等。
 
-#### Get a Specific Resource
+#### 获取特定资源
 
 ```go-html-template
 {{ $logo := .Resources.GetByPrefix "logo" }}
@@ -83,7 +71,7 @@ Type here is `page` for pages, else the main type in the MIME type, so `image`, 
 {{ end }}
 ```
 
-#### Include Page Resource Content
+#### 包含页面资源内容
 
 ```go-html-template
 {{ with .Resources.ByType "page" }}
@@ -92,99 +80,103 @@ Type here is `page` for pages, else the main type in the MIME type, so `image`, 
 {{ .Content }}
 {{ end }}
 {{ end }}
-
 ```
 
+## 图像处理
 
-## Image Processing
+`image`资源具有三种处理方法：`Resize`，`Fit`和`Fill`:
 
-The `image` resource implements the methods `Resize`, `Fit` and `Fill`:
+##### 调整大小（`Resize`）
 
-Resize
-: Resize to the given dimension, `{{ $logo.Resize "200x" }}` will resize to 200 pixels wide and preserve the aspect ratio. Use `{{ $logo.Resize "200x100" }}` to control both height and width.
+将图片调整为指定尺寸。使用`{{ $logo.Resize "200x" }}`将图片宽度改为200px，比例不变。使用`{{ $logo.Resize "200x100" }}`会同时修改图片的宽度和高度。
 
-Fit
-: Scale down the image to fit the given dimensions, e.g. `{{ $logo.Fit "200x100" }}` will fit the image inside a box that is 200 pixels wide and 100 pixels high.
+##### 适合（`Fit`）
 
-Fill
-: Resize and crop the image given dimensions, e.g. `{{ $logo.Fill "200x100" }}` will resize and crop to width 200 and height 100
+缩放图片至指定尺寸。使用`{{ $logo.Fit "200x100" }}`将图片放在200px x 100px的容器中。
 
+##### 填充（`Fill`）
 
-{{% note %}}
-Image operations in Hugo currently **do not preserve EXIF data** as this is not supported by Go's [image package](https://github.com/golang/go/search?q=exif&type=Issues&utf8=%E2%9C%93). This will be improved on in the future.
-{{% /note %}}
+调整并裁剪图片至指定尺寸。使用`{{ $logo.Fill "200x100" }}`将调整图片尺寸并裁剪为200px x 100px。
 
+> Hugo的图像处理**不会保留EXIF元数据**，因为目前Go的[图像处理模块](https://github.com/golang/go/search?q=exif&type=Issues&utf8=%E2%9C%93)暂不支持。此功能预计在未来添加支持。
 
-### Image Processing Examples
+### 示例
 
-_The photo of the sunset used in the examples below is Copyright [Bjørn Erik Pedersen](https://commons.wikimedia.org/wiki/User:Bep) (Creative Commons Attribution-Share Alike 4.0 International license)_
+对应图片请参见[原文](https://gohugo.io/about/new-in-032/)
 
+```go-html-template
+{{ $original := .Page.Resources.GetMatch (printf "%s*" (.Get 0)) }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ if eq $command "Fit"}}
+{{ .Scratch.Set "image" ($original.Fit $options) }}
+{{ else if eq $command "Resize"}}
+{{ .Scratch.Set "image" ($original.Resize $options) }}
+{{ else if eq $command "Fill"}}
+{{ .Scratch.Set "image" ($original.Fill $options) }}
+{{ else }}
+{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+{{ end }}
+{{ $image := .Scratch.Get "image" }}
+<figure style="width: {{ add $image.Width 3 }}px; padding: 3px; background-color: #cccc">
+	<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+	<figcaption>
+	<small>
+	{{ with .Inner }}
+	{{ . }}
+	{{ else }}
+	.{{ $command }} "{{ $options }}"
+	{{ end }}
+	</small>
+	</figcaption>
+</figure> 
+```
 
-{{< imgproc sunset Resize "300x" />}}
-
-{{< imgproc sunset Fill "90x120 left" />}}
-
-{{< imgproc sunset Fill "90x120 right" />}}
-
-{{< imgproc sunset Fit "90x90" />}}
-
-{{< imgproc sunset Resize "300x q10" />}}
-
-
-This is the shortcode used in the examples above:
-
-
-{{< code file="layouts/shortcodes/imgproc.html" >}}
-{{< readfile file="layouts/shortcodes/imgproc.html" >}}   
-{{< /code >}}
-
-And it is used like this:
+这样使用：
 
 ```go-html-template
 {{</* imgproc sunset Resize "300x" */>}}
 ```
 
-### Image Processing Options
+### 图像处理选项
 
-In addition to the dimensions (e.g. `200x100`) where either height or width can be omitted, Hugo supports a set of additional image options:
+除了调节尺寸以外，Hugo还支持一些额外的图像处理选项：
 
-Anchor
-: Only relevant for `Fill`. This is useful for thumbnail generation where the main motive is located in, say, the left corner. Valid are `Center`, `TopLeft`, `Top`, `TopRight`, `Left`, `Right`, `BottomLeft`, `Bottom`, `BottomRight`. Example: `{{ $logo.Fill "200x100 BottomLeft" }}`
+##### 起始位置（Anchor）
 
-JPEG Quality
-: Only relevant for JPEG images, values 1 to 100 inclusive, higher is better. Default is 75. `{{ $logo.Resize "200x q50" }}`
+仅在`Fill`下生效。当你需要粗略定位图片的位置时，这项功能十分有用。可选值为：`Center`, `TopLeft`, `Top`, `TopRight`, `Left`, `Right`, `BottomLeft`, `Bottom`, `BottomRight`。例如：`{{ $logo.Fill "200x100 BottomLeft" }}`。
 
-Rotate
-: Rotates an image by the given angle counter-clockwise. The rotation will be performed first to get the dimensions correct. `{{ $logo.Resize "200x r90" }}`. The main use of this is to be able to manually correct for [EXIF orientation](https://github.com/golang/go/issues/4341) of JPEG images.
+##### JPEG质量（JPEG Quality）
 
-Resample Filter
-: Filter used in resizing. Default is `Box`, a simple and fast resampling filter appropriate for downscaling. See https://github.com/disintegration/imaging for more. If you want to trade quality for faster processing, this may be a option to test. 
+仅与JPEG图像有关。可选值从1至100，值越高质量越高。默认值为75。例如：`{{ $logo.Resize "200x q50" }}`
 
+##### 旋转（Rotate）
 
+逆时针旋转图像至给定值（角度）。旋转会首先执行以确保尺寸正确，目的是为了手动纠正JPEG的[EXIF方向](https://github.com/golang/go/issues/4341)。例如：`{{ $logo.Resize "200x r90" }}`。
 
-### Performance
+##### 重新采样过滤器
 
-Processed images are stored below `<project-dir>/resources` (can be set with `resourceDir` config setting). This folder is deliberately placed in the project, as it is recommended to check these into source control as part of the project. These images are not "Hugo fast" to generate, but once generated they can be reused.
+过滤器用于调整尺寸。默认是`Box`，一个用于缩小图像的，简单快速的重采样过滤器。参阅 https://github.com/disintegration/imaging 获取更多信息。如果你希望更快的处理trade质量，可以测试此选项。
 
-If you change your image settings (e.g. size), remove or rename images etc., you will end up with unused images taking up space and cluttering your project. 
+### 性能
 
-To clean up, run:
+处理后的图像被储存在`<project-dir>/resources`下，此位置可在`resourceDir`配置中设置。此文件夹有意被放置在项目中，因为我们建议将这些文件夹作为项目的一部分加入到源代码控制中。这些图像并不是由Hugo快速生成的。不过一旦生成，它们便可以被重复使用。
+
+如果你修改了图片的配置（如尺寸），删除或重命名图像等，这些未被使用的图像将会占用相应空间。
+
+执行以下命令清除这些文件：
 
 ```bash
 hugo --gc
 ```
 
+> **GC**是垃圾回收（Garbage Collectio）的缩写。
 
-{{% note %}}
-**GC** is short for **Garbage Collection**.
-{{% /note %}}
+## 配置
 
+### 默认的图像处理配置
 
-## Configuration
-
-### Default Image Processing Config
-
-You can configure an `imaging` section in `config.toml` with default image processing options:
+你可以在`config.toml`中新建一个`imaging`段来自定义图像处理选项：
 
 ```toml
 [imaging]
@@ -196,8 +188,3 @@ resampleFilter = "box"
 # Defatult JPEG quality setting. Default is 75.
 quality = 68
 ```
-
-
-
-
-

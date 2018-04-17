@@ -1,20 +1,12 @@
 ---
 title: 关于Hugo
 linktitle: 总览
-description: Hugo's features, roadmap, license, and motivation.
+description: Hugo的特性，蓝图，许可证及动机。
 date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-categories: []
-keywords: []
-menu:
-  docs:
-    parent: "about"
-    weight: 1
+translate: 2018-04-16
 weight: 1
-draft: false
-aliases: [/about-hugo/,/docs/]
-toc: false
 ---
 
-Hugo is not your average static site generator.
+Hugo是你的静态网站生成器。
+
+（原文没有理解是什么意思）

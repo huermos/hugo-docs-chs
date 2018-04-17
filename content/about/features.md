@@ -1,56 +1,48 @@
 ---
 title: Hugo的特性
 linktitle: 特性
-description:  Hugo拥有极快的速度，完善的内容管理器和强大的模板语言。他们非常适合各种静态网站。
+description: Hugo拥有极快的速度，完善的内容管理器和强大的模板语言。他们非常适合各种静态网站。
 date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "about"
-    weight: 20
+translate: 2018-04-16
 weight: 20
 sections_weight: 20
-draft: false
-aliases: [/about/features]
-toc: true
 ---
 
 ## 简介
 
-* 极快的构建时间 (每页小于1ms)
-* 跨平台，兼容macOS, Linux, Windows等
-* 在开发时利用LiveReload实时渲染
-* 多样的主题
-* 随时托管你的网站
+* [极快](https://github.com/bep/hugo-benchmark/)构建时间 (每页小于1ms)
+* 跨平台，[兼容](../../getting-started/installing/)macOS, Linux, Windows等
+* 开发时利用[LiveReload](../../getting-started/usage/)实时渲染
+* 多样的[主题](../../themes/)
+* [随时托管你的网站](../../hosting-and-deployment/)
 
 ## 构建
 
-* 简单的构建你的项目，包括你的网站部分
-* 可自定义的网址
-* 支持可自由配置的分来系统，包括类别和标签
-* 通过强大的模板功能，按需对内容进行排序
-* 自动生成站点目录
-* 创建动态目录
-* 支持个性化域名
-* 支持固定链接
-* 利用别名重定向
+* 简单的[构建你的项目](../../getting-started/directory-structure/)和网站
+* 可自定义的[URL](../../content-management/urls/)
+* 支持可自由配置的[分类系统](../../content-management/taxonomies/)，包括类别和标签
+* 通过强大的模板[功能](../../functions/)，按需对内容进行[排序](/templates/)
+* 自动生成[站点目录](../../content-management/toc/)
+* 创建动态[目录](../../templates/menus/)
+* 支持[个性化域名](../../content-management/urls/)
+* 支持[固定链接](../../content-management/urls/#permalinks)
+* 利用[别名](../../content-management/urls/#aliases)重定向
 
 ## 内容
 
-* 支持本地Markdown和Emacs的org模式，以及外部帮助程序提供的其他语言（参阅[支持的格式](https://gohugo.io/content-management/formats/)）
-* 头文件支持TOML，YAML和JSON元数据
-* 个性化主页
-* 多种内容形式
-* 自动或手动定义内容摘要
-* 使用简码在Markdown内部启用富文本内容
-* 分钟阅读
-* 计数器
+* 支持本地Markdown和Emacs的org模式，以及外部帮助程序提供的其他语言（参阅[支持的格式](../../content-management/formats/)）
+* [头文件](../../content-management/front-matter/)支持TOML，YAML和JSON元数据
+* 个性化[主页](../../templates/homepage/)
+* 多种[内容形式](../../content-management/types/)
+* 自动或手动定义[内容摘要](../../content-management/summaries/)
+* 使用[简码](../../content-management/shortcodes/)在Markdown内部启用富文本内容
+* [分钟阅读](http://pygments.org/)
+* [计数器](http://pygments.org/)
 
 ## 附加功能
 
 * [Disqus](https://disqus.com/)评论支持
 * [Google Analytics](https://google-analytics.com/)统计支持
 * 自动创建[RSS](https://gohugo.io/templates/rss/)
-* 支持[Go](http://golang.org/pkg/html/template/)， [Amber](https://github.com/eknkc/amber)和[Ace](https://gohugo.io/templates/alternatives/)的HTML模板
+* 支持[Go](http://golang.org/pkg/html/template/)，[Amber](https://github.com/eknkc/amber)和[Ace](https://gohugo.io/templates/alternatives/)的HTML模板
 * [Pygments](http://pygments.org/)提供语法高亮
