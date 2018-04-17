@@ -2,7 +2,7 @@
 title: 静态网站生成器的优势
 linktitle: 静态的优势
 description: 优秀的性能，安全性和易用性只是静态网站生成器吸引人的部分原因。
-date: 2017-02-01
+date: 2018-03-16
 translate: 2018-04-16
 weight: 30
 sections_weight: 30

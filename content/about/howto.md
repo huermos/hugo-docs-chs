@@ -1,11 +1,11 @@
 ---
-title: Hugo 0.32 HOWTO
-linktitle: 版本0.32更新
+title: 版本更新
+linktitle: Hugo v0.32 版本更新说明
 description: 关于页面组织，图像处理等。
-date: 2017-02-01
+date: 2018-04-02
 translate: 2018-04-16
-weight: 10
-sections_weight: 10
+weight: 2
+sections_weight: 2
 ---
 
 > 本页面内容为0.32版本更新内容，将在日后移动到其相应的页面。临时置于此处供快速参考和调试。

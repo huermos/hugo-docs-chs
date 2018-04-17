@@ -2,7 +2,7 @@
 title: Hugo的特性
 linktitle: 特性
 description: Hugo拥有极快的速度，完善的内容管理器和强大的模板语言。他们非常适合各种静态网站。
-date: 2017-02-01
+date: 2018-01-24
 translate: 2018-04-16
 weight: 20
 sections_weight: 20

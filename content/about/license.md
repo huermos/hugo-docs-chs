@@ -2,7 +2,7 @@
 title: Apache许可证
 linktitle: 许可证
 description: 0.15版本及以后的发行版本Hugo适用于Apache 2.0许可证。
-date: 2016-02-01
+date: 2017-09-13
 translate: 2018-04-16
 weight: 60
 sections_weight: 60

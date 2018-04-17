@@ -2,7 +2,7 @@
 title: 什么是Hugo
 linktitle: 什么是Hugo
 description: Hugo是一款使用Go语言编写的，现代的高速静态网站生成器，旨在让网站创作变得更加有趣。
-date: 2017-02-01
+date: 2018-02-04
 translate: 2018-04-16
 weight: 10
 sections_weight: 10
