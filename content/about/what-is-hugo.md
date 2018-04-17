@@ -1,45 +1,34 @@
 ---
-title: What is Hugo
-linktitle: What is Hugo
-description: Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
+title: 什么是Hugo
+linktitle: 什么是Hugo
+description: Hugo是一款使用Go语言编写的，现代的高速静态网站生成器，旨在让网站创作变得更加有趣。
 date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-layout: single
-menu:
-  docs:
-    parent: "about"
-    weight: 10
+translate: 2018-04-16
 weight: 10
 sections_weight: 10
-draft: false
-aliases: [/overview/introduction/,/about/why-i-built-hugo/]
-toc: true
 ---
 
-Hugo is a general-purpose website framework. Technically speaking, Hugo is a [static site generator][]. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website's end users and an ideal writing experience for website authors.
+Hugo是一个通用的网站框架。从技术上讲，Hugo是一个[静态站点生成器](../../about/benefits/)。不像系统在用户每次访问时动态的创建页面，Hugo在你新建或更新文章时就开始创建页面。由于网站的浏览次数远远多于编辑次数，因此Hugo旨在为你的网站用户提供最佳的浏览体验，同时为你的网站作者提供理想的写作体验。
 
-Websites built with Hugo are extremely fast and secure. Hugo sites can be hosted anywhere, including [Netlify][], [Heroku][], [GoDaddy][], [DreamHost][], [GitHub Pages][], [GitLab Pages][], [Surge][], [Aerobatic][], [Firebase][], [Google Cloud Storage][], [Amazon S3][], [Rackspace][], [Azure][], and [CloudFront][] and work well with CDNs. Hugo sites run without the need for a database or dependencies on expensive runtimes like Ruby, Python, or PHP.
+使用Hugo构建的网站非常快速和安全。Hugo允许你在任何地方托管，包括[Netlify][], [Heroku][], [GoDaddy][], [DreamHost][], [GitHub Pages][], [GitLab Pages][], [Surge][], [Aerobatic][], [Firebase][], [Google Cloud Storage][], [Amazon S3][], [Rackspace][], [Azure][], and [CloudFront][]，并且可以与CDN良好的协作。Hugo的运行不依赖数据库或其他依赖库，如Ruby，Python或PHP。
 
-We think of Hugo as the ideal website creation tool with nearly instant build times, able to rebuild whenever a change is made.
+我们相信Hugo是一个理想的网站创建工具。无论你何时修改内容页，它可以瞬间构建出最终页面。
 
-## How Fast is Hugo?
+## Hugo究竟有多快？
 
 {{< youtube "CdiDYZ51a2o" >}}
 
-## What Does Hugo Do?
+## Hugo如何运行？
 
-In technical terms, Hugo takes a source directory of files and templates and uses these as input to create a complete website.
+通常，你只需要提供一个包含**文件**和**模板**的目录，Hugo就可以把它们编译成一个完整的网站。
 
-## Who Should Use Hugo?
+## Hugo为谁服务？
 
-Hugo is for people that prefer writing in a text editor over a browser.
+Hugo适合那些喜欢在文本编辑器而不是浏览器中写文章的人。
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+Hugo适合那些想要自己编写网站代码却担心不会配置复杂的运行，依赖关系与数据库的人。
 
-Hugo is for people building a blog, a company site, a portfolio site, documentation, a single landing page, or a website with thousands of pages.
-
-
+Hugo适合那些希望构建一个博客，公司站点，作品集，在线文档，着陆页或复杂网站的人。
 
 [@spf13]: https://twitter.com/@spf13
 [Aerobatic]: https://www.aerobatic.com/
@@ -63,7 +52,6 @@ Hugo is for people building a blog, a company site, a portfolio site, documentat
 [Nanoc]: https://nanoc.ws/
 [Netlify]: https://netlify.com
 [rackspace]: https://www.rackspace.com/cloud/files
-[static site generator]: /about/benefits/
 [Rackspace]: https://www.rackspace.com/cloud/files
-[static site generator]: /about/benefits/
+[static site generator]: ../../about/benefits/
 [Surge]: https://surge.sh

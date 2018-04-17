@@ -18,9 +18,9 @@ Hugo提前将所有的文件在你的电脑上转化为HTML网页。因此在你
 
 ## 更多关于静态网站生成器的介绍
 
-* ["静态网站生成器简介", David Walsh][https://davidwalsh.name/introduction-static-site-generators]
-* ["Hugo与Wordpress页面加载速度对比: Hugo秒杀Wordpress", GettingThingsTech][http://www.oreilly.com/web-platform/free/files/static-site-generators.pdf]
-* ["静态网站生成器", O'Reilly][https://www.netlify.com/blog/2016/05/02/top-ten-static-website-generators/]
-* [StaticGen: 顶级的静态网站生成器 (GitHub Stars)][https://gettingthingstech.com/hugo-vs.-wordpress-page-load-speed-comparison-hugo-leaves-wordpress-in-its-dust/]
-* ["十大静态网站生成器", Netlify blog][https://www.staticgen.com/]
-* ["静态的复苏", dotCMS][https://dotcms.com/blog/post/the-resurgence-of-static]
+* ["静态网站生成器简介", David Walsh]([)https://davidwalsh.name/introduction-static-site-generators)
+* ["Hugo与Wordpress页面加载速度对比: Hugo秒杀Wordpress", GettingThingsTech](http://www.oreilly.com/web-platform/free/files/static-site-generators.pdf)
+* ["静态网站生成器", O'Reilly](https://www.netlify.com/blog/2016/05/02/top-ten-static-website-generators/)
+* [StaticGen: 顶级的静态网站生成器 (GitHub Stars)](https://gettingthingstech.com/hugo-vs.-wordpress-page-load-speed-comparison-hugo-leaves-wordpress-in-its-dust/)
+* ["十大静态网站生成器", Netlify blog](https://www.staticgen.com/)
+* ["静态的复苏", dotCMS](https://dotcms.com/blog/post/the-resurgence-of-static)
