@@ -1,0 +1,18 @@
+{{ define "style" }}<!--注意更新layout.css-->
+	<link rel="stylesheet" href="../../../css/layout.css">
+	<link rel="stylesheet" href="../../../css/archive.css">
+	<link rel="stylesheet" href="../../../css/archive_md.css">{{ end }}
+
+{{ define "script" }}
+	<script type="text/javascript" src="../../../js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../../../js/scripts.js"></script>{{ end }}
+
+{{ define "title" }}
+	{{ .Title }} - {{ .Site.Title }}
+{{ end }}
+
+{{ define "post" }}
+	<h1>{{ .Title }}</h1>
+	<a class="archive-date">{{ .Date.Format "2006-01-02" }}</a>
+	{{ .Content }}
+{{ end }}

@@ -1,0 +1,18 @@
+{{ define "style" }}<!--注意更新layout.css-->
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/archive.css">
+	<link rel="stylesheet" href="../css/archive_md.css">{{ end }}
+
+{{ define "script" }}
+	<script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../js/scripts.js"></script>{{ end }}
+
+{{ define "post" }}
+	{{ range first 20 .Data.Pages }}
+		<article>
+			<a href="{{ .RelPermalink }}" class="archive-title">{{ .Title }}</a>
+			<a class="archive-date">{{ .Date.Format "2006-01-02" }}</a>
+			<p class="archive-content">{{ .Summary }}</p>
+		</article>
+	{{ end }}
+{{ end }}
