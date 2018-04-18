@@ -35,7 +35,7 @@ sections_weight: 20
 * 个性化[主页](../../templates/homepage/)
 * 多种[内容形式](../../content-management/types/)
 * 自动或手动定义[内容摘要](../../content-management/summaries/)
-* 使用[简码](../../content-management/shortcodes/)在Markdown内部启用富文本内容
+* 使用[简码（Shortcode）](../../content-management/shortcodes/)在Markdown内部启用富文本内容
 * [分钟阅读](http://pygments.org/)
 * [计数器](http://pygments.org/)
 

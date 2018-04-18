@@ -1,75 +1,73 @@
 ---
-title: Code Toggle
-description: Code Toggle tryout and showcase.
-date: 2018-03-16
-categories: [getting started,fundamentals]
-keywords: [configuration,toml,yaml,json]
+title: 代码切换器
+linktitle: 代码切换器
+description: 测试并演示代码切换器的效果。
+date: 2018-04-02
+translate: 2018-04-17
 weight: 60
 sections_weight: 60
-draft: false
-toc: true
 ---
 
-## The Config Toggler!
+## 设置代码切换器
 
-This is an exemple for the Config Toggle shortcode. 
-Its purpose is to let users choose a Config language by clicking on its corresponding tab. Upon doing so, every Code toggler on the page will be switched to the target language. Also, target language will be saved in user's `localStorage` so when they go to a different pages, Code Toggler display their last "toggled" config language.
+以下是一个使用了代码切换器的简码例子。其目的是让用户通过点击不同的选项卡来选择对应的语言。这样一来，此页面上的每个代码切换器中的内容都会被被切换到指定语言。同时，这个语言也会被储存在用户的`localStorage`中，即使用户访问其他页面时，代码切换器也会显示最后选用的语言。
 
-## That Config Toggler
+> **译者注：**`Hugo中文化官方文档`没用启用代码切换器，因此所有使用了此配置的展示将不起作用。
 
-{{< code-toggle file="config">}}
+## 一个代码切换器
 
-baseURL: "https://yoursite.example.com/"
-title: "My Hugo Site"
-footnoteReturnLinkContents: "↩"
-permalinks:
-  post: /:year/:month/:title/
-params:
-  Subtitle: "Hugo is Absurdly Fast!"
-  AuthorName: "Jon Doe"
-  GitHubUser: "spf13"
-  ListOfFoo:
-    - "foo1"
-    - "foo2"
-  SidebarRecentLimit: 5
-{{< /code-toggle >}}
+```
+baseURL = "https://yoursite.example.com/"
+footnoteReturnLinkContents = "↩"
+title = "My Hugo Site"
 
-## Another Config Toggler!
+[params]
+  AuthorName = "Jon Doe"
+  GitHubUser = "spf13"
+  ListOfFoo = ["foo1", "foo2"]
+  SidebarRecentLimit = 5
+  Subtitle = "Hugo is Absurdly Fast!"
 
-{{< code-toggle file="theme">}}
+[permalinks]
+  post = "/:year/:month/:title/"
+```
 
-# theme.toml template for a Hugo theme
+## 另一个代码切换器
 
-name = "Hugo Theme"
+```
+description = ""
+features = ["", ""]
+homepage = "https://github.com/budparr/gohugo.io"
 license = "MIT"
 licenselink = "https://github.com/budparr/gohugo.io/blob/master/LICENSE.md"
-description = ""
-homepage = "https://github.com/budparr/gohugo.io"
-tags = ["website"]
-features = ["", ""]
 min_version = 0.18
+name = "Hugo Theme"
+tags = ["website"]
 
 [author]
-  name = "Bud Parr"
   homepage = "https://github.com/budparr"
+  name = "Bud Parr"
+```
 
-{{< /code-toggle >}}
+## 两个普通的代码块
 
-## Two regular code blocks
+bf-config.toml
 
-{{< code file="bf-config.toml" >}}
+```
 [blackfriday]
   angledQuotes = true
   fractions = false
   plainIDAnchors = true
   extensions = ["hardLineBreak"]
-{{< /code >}}
+```
 
-{{< code file="bf-config.yml" >}}
+bf-config.yml
+
+```
 blackfriday:
   angledQuotes: true
   fractions: false
   plainIDAnchors: true
   extensions:
     - hardLineBreak
-{{< /code >}}
+```

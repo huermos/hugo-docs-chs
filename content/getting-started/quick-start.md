@@ -1,65 +1,42 @@
 ---
-title: Quick Start
-linktitle: Quick Start
-description: Create a Hugo site using the beautiful Ananke theme.
-date: 2013-07-01
-publishdate: 2013-07-01
-categories: [getting started]
-keywords: [quick start,usage]
-authors: [Shekhar Gulati, Ryan Watters]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 10
+title: 快速入门
+linktitle: 快速入门
+description: 使用Ananke主题创建一个Hugo站点。
+date: 2017-09-13
+trabskate: 2018-07-17
 weight: 10
 sections_weight: 10
-draft: false
-aliases: [/quickstart/,/overview/quickstart/]
-toc: true
 ---
 
-{{% note %}}
-This quick start uses `macOS` in the examples. For instructions about how to install Hugo on other operating systems, see [install](/getting-started/installing).
+> 此快速入门示例运行在`macOS`平台上。有关如何在其他操作系统上安装Hugo，请参阅[安装](../installing)。
+> 同时，你还需要安装[Git](https://git-scm.com/downloads)来运行本教程。
 
-You also need [Git installed](https://git-scm.com/downloads) to run this tutorial.
-{{% /note %}}
+## 第一步：安装Hugo
 
-
-
-## Step 1: Install Hugo
-
-{{% note %}}
-`Homebrew`, a package manager for `macOS`,  can be installed from [brew.sh](https://brew.sh/). See [install](/getting-started/installing) if you are running Windows etc.
-{{% /note %}}
+> `Homebrew`是`macOS`平台下的软件包管理工具，你可以从[brew.sh](https://brew.sh/)安装。如果你使用Windows或其他操作系统，请参阅[安装](../installing)。
 
 ```bash
 brew install hugo
 ```
 
-To verify your new install:
+执行以下命令检测你是否安装成功：
 
 ```bash
 hugo version
 ```
 
 
-{{< asciicast HDlKrUrbfT7yiWsbd6QoxzRTN >}}
-
-
-## Step 2: Create a New Site
+## 第二步：创建站点
 
 ```bash
 hugo new site quickstart
 ```
 
-The above will create a new Hugo site in a folder named `quickstart`.
+这个命令将把Hugo创建在`quickstart`文件夹中。
 
-{{< asciicast 1PH9A2fs14Dnyarx5v8OMYQer >}}
+## 第二步：加载主题
 
-
-## Step 3: Add a Theme
-
-See [themes.gohugo.io](https://themes.gohugo.io/) for a list of themes to consider. This quickstart uses the beautiful [Ananke theme](https://themes.gohugo.io/gohugo-theme-ananke/).
+访问[官方主题站（英文）](https://themes.gohugo.io/)来获取更多主题。此示例将使用[Ananke主题](https://themes.gohugo.io/gohugo-theme-ananke/)。
 
 ```bash
 cd quickstart;\
@@ -71,17 +48,13 @@ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/anan
 echo 'theme = "ananke"' >> config.toml
 ```
 
-
-{{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}
-
-## Step 4: Add Some Content
+## 第四步：添加文章
 
 ```
 hugo new posts/my-first-post.md
 ```
 
-
-Edit the newly created content file if you want. Now, start the Hugo server with [drafts](/getting-started/usage/#draft-future-and-expired-content) enabled:
+现在你已经创建好了一篇文章，你可以选择在执行以下步骤前先编辑一下内容。完成后，在[草稿模式](../usage/)下运行Hugo：
 
 ```
 ▶ hugo server -D
@@ -104,18 +77,15 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
+**在浏览器中输入[http://localhost:1313/](http://localhost:1313/)打开这个Hugo站点。**
 
-**Navigate to your new site at [http://localhost:1313/](http://localhost:1313/).**
+## 第五步：自定义主题
 
+你的网站看起来不错，但在你上传并发布之前，有一些配置需要调整一下。
 
+### 网站配置
 
-## Step 5: Customize the Theme
-
-Your new site already looks great, but you will want to tweak it a little before you release it to the public.
-
-### Site Configuration
-
-Open up `config.toml` in a text editor:
+在文本编辑器中打开根目录的`config.toml`文件：
 
 ```
 baseURL = "https://example.org/"
@@ -124,17 +94,14 @@ title = "My New Hugo Site"
 theme = "ananke"
 ```
 
-Replace the `title` above with something more personal. Also, if you already have a domain ready, set the `baseURL`. Note that this value is not needed when running the local development server. 
+把`title`中的内容替换成你自己的标题。另外，如果你已经有一个域名，把他填写在`baseURL`中。注意，在本地开发时不需要修改此参数。
 
-{{% note %}}
-**Tip:** Make the changes to the site configuration or any other file in your site while the Hugo server is running, and you will see the changes in the browser right away.
-{{% /note %}}
+> **提示：**在Hugo运行时，对站点配置或文件内容的修改都会实时反应在浏览器中。
 
+有关此主题（Ananke）的配置选项，请参阅[Ananke主题](https://github.com/budparr/gohugo-theme-ananke)。
 
-For theme specific configuration options, see the [theme site](https://github.com/budparr/gohugo-theme-ananke).
+**有关Hugo主题的配置选项，请参阅[自定义主题](../../themes/customizing/)。**
 
-**For further theme customization, see [Customize a Theme](/themes/customizing/).**
+## 概览
 
-## Recapitulation
-
-{{< asciicast pWp4uvyAkdWgQllD9RCfeBL5k >}}
+本页面视频请参见[原文](https://gohugo.io/getting-started/quick-start/)。

@@ -102,7 +102,7 @@ sections_weight: 2
 
 ### 示例
 
-对应图片请参见[原文](https://gohugo.io/about/new-in-032/)
+此处对应图片请参见[原文](https://gohugo.io/about/new-in-032/)。
 
 ```go-html-template
 {{ $original := .Page.Resources.GetMatch (printf "%s*" (.Get 0)) }}

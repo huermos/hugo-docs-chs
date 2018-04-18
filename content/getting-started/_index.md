@@ -1,23 +1,9 @@
 ---
-title: Get Started
-linktitle: Get Started Overview
-description: Quick start and guides for installing Hugo on your preferred operating system.
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-categories: [getting started]
-keywords: [usage,docs]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 1
-weight: 0001	#rem
-draft: false
-aliases: [/overview/introduction/]
-toc: false
+title: 开始使用
+linktitle: 总览
+description: 在你的操作系统上安装并开始使用Hugo。
+translate: 2018-04-17
+weight: 1
 ---
 
-If this is your first time using Hugo and you've [already installed Hugo on your machine][installed], we recommend the [quick start][].
-
-[installed]: /getting-started/installing/
-[quick start]: /getting-started/quick-start/
+如果这是你第一次使用Hugo，并且你已经在你的机器上[成功安装](../installing/)，我们建议你[快速入门](../quick-start/)。
