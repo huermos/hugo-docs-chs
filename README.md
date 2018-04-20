@@ -4,13 +4,15 @@
 
 [Hugo](https://gohugo.io/)是一款使用Go语言编写的静态网站生成器。
 
-随着博客的再次小范围流行，许多人开始关注静态博客系统。相比[hexo](https://hexo.io/)，使用Go语言编写的[Hugo](https://gohugo.io/)并不需要依赖环境，且部署简单，编译迅速，容易上手。你甚至可以什么都不会，只需要一行命令就可以完成所有操作：
+相比[hexo](https://hexo.io/)，使用Go语言编写的[Hugo](https://gohugo.io/)并不需要依赖环境，且部署简单，编译迅速，容易上手。你甚至可以什么都不会，只需要一行命令就可以完成所有操作：
 
 ```
-hexo
+hugo
 ```
 
 这份文档翻译的目的在于向希望了解高阶技巧的中国用户提供些许帮助。
+
+英文官方文档请参阅[Hugo Documentation](https://gohugo.io/documentation/)。
 
 ## 说明
 
