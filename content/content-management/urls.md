@@ -17,7 +17,7 @@ aliases: [/extras/permalinks/,/extras/aliases/,/extras/urls/,/doc/redirects/,/do
 toc: true
 ---
 
-## Permalinks
+## 固定链接
 
 The default Hugo target directory for your built website is `public/`. However, you can change this value by specifying a different `publishDir` in your [site configuration][config]. The directories created at build time for a section reflect the position of the content's directory within the `content` folder and namespace matching its layout within the `contentdir` hierarchy.
 
@@ -80,7 +80,7 @@ The following is a list of values that can be used in a `permalink` definition i
 `:filename`
 : the content's filename (without extension)
 
-## Aliases
+## 别名
 
 For people migrating existing published content to Hugo, there's a good chance you need a mechanism to handle redirecting old URLs.
 

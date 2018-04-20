@@ -4,13 +4,13 @@ linktitle: Hugo v0.32 版本更新说明
 description: 关于页面组织，图像处理等。
 date: 2018-04-02
 translate: 2018-04-16
+translator: huermos
 weight: 2
-sections_weight: 2
 ---
 
-> 本页面内容为0.32版本更新内容，将在日后移动到其相应的页面。临时置于此处供快速参考和调试。
+> 本页面内容为0.32版本更新内容，将在未来移动到其对应的页面。临时置于此处以供快速参考和调试。
 
-另请参阅[bep](https://github.com/bep/)的这个demo，他提供了这些新功能：
+另请参阅[bep](https://github.com/bep/)的这个demo，他提供了下列新功能：
 
 * http://hugotest.bep.is
 * https://github.com/bep/hugotest
@@ -19,11 +19,11 @@ sections_weight: 2
 
 ### 组织你的内容
 
-![img](https://d33wubrfki0l68.cloudfront.net/4c06428897df426b60d300c8f6de175b37d7fdde/637cb/images/hugo-content-bundles.png)
+![img](/resources/img/about/hugo-content-bundles.png)
 
 上面的content文件夹包含内容页面（`md`如Markdown）与图像资源。
 
-> Hugo允许你使用任何符合MIME的文件类型（如`json`就被完美支持）。如果你想要与众不同，Hugo也允许你定义你自己的[媒体类型](/templates/output-formats/#media-types)。
+> Hugo允许你使用任何符合MIME的文件类型（如`json`就被完美支持）。如果你想要与众不同，Hugo也允许你定义你自己的[媒体类型](/templates/output-formats/#媒体类型)。
 
 上图中的三个红框分别表示以下三项内容：
 
@@ -52,7 +52,7 @@ sections_weight: 2
 
 对于绝对URL，请使用`.Permalink`。
 
-**注意：**固定连接（permalink）与内容页面有关，谨慎设置固定连接的参数。此外，被包含的页面资源将不具有`RelPermalink`值。
+**注意：**固定连接与内容页面有关，谨慎设置固定连接的参数。此外，被包含的页面资源将不具有`RelPermalink`值。
 
 #### 按类型列出所有资源
 
@@ -61,7 +61,7 @@ sections_weight: 2
 {{ end }}
 ```
 
-如果在此处使用`page`将表示网页（pages）。除此之外，你可以使用MIME中的其他类型，包括`image`和`json`等。
+如果在此处使用`page`则会表示所有网页（pages）。除此之外，你可以使用MIME中的其他类型，包括`image`和`json`等。
 
 #### 获取特定资源
 
@@ -86,23 +86,20 @@ sections_weight: 2
 
 `image`资源具有三种处理方法：`Resize`，`Fit`和`Fill`:
 
-##### 调整大小（`Resize`）
+Resize
+: 将图片调整为指定尺寸。使用`{{ $logo.Resize "200x" }}`将图片宽度改为200px，比例不变。使用`{{ $logo.Resize "200x100" }}`会同时修改图片的宽度和高度。
 
-将图片调整为指定尺寸。使用`{{ $logo.Resize "200x" }}`将图片宽度改为200px，比例不变。使用`{{ $logo.Resize "200x100" }}`会同时修改图片的宽度和高度。
+Fit
+: 缩放图片至指定尺寸。使用`{{ $logo.Fit "200x100" }}`将图片放在200px x 100px的容器中。
 
-##### 适合（`Fit`）
-
-缩放图片至指定尺寸。使用`{{ $logo.Fit "200x100" }}`将图片放在200px x 100px的容器中。
-
-##### 填充（`Fill`）
-
-调整并裁剪图片至指定尺寸。使用`{{ $logo.Fill "200x100" }}`将调整图片尺寸并裁剪为200px x 100px。
+Fill
+: 调整并裁剪图片至指定尺寸。使用`{{ $logo.Fill "200x100" }}`将调整图片尺寸并裁剪为200px x 100px。
 
 > Hugo的图像处理**不会保留EXIF元数据**，因为目前Go的[图像处理模块](https://github.com/golang/go/search?q=exif&type=Issues&utf8=%E2%9C%93)暂不支持。此功能预计在未来添加支持。
 
 ### 示例
 
-此处对应图片请参见[原文](https://gohugo.io/about/new-in-032/)。
+###### 此处图片请参阅[原文](https://gohugo.io/about/new-in-032/)。
 
 ```go-html-template
 {{ $original := .Page.Resources.GetMatch (printf "%s*" (.Get 0)) }}
@@ -142,21 +139,17 @@ sections_weight: 2
 
 除了调节尺寸以外，Hugo还支持一些额外的图像处理选项：
 
-##### 起始位置（Anchor）
+Anchor
+: 图片定位，仅在`Fill`下生效。当你需要粗略定位图片的位置时，这项功能十分有用。可选值为：`Center`, `TopLeft`, `Top`, `TopRight`, `Left`, `Right`, `BottomLeft`, `Bottom`, `BottomRight`。例如：`{{ $logo.Fill "200x100 BottomLeft" }}`。
 
-仅在`Fill`下生效。当你需要粗略定位图片的位置时，这项功能十分有用。可选值为：`Center`, `TopLeft`, `Top`, `TopRight`, `Left`, `Right`, `BottomLeft`, `Bottom`, `BottomRight`。例如：`{{ $logo.Fill "200x100 BottomLeft" }}`。
+JPEG Quality
+: 图像质量，仅与JPEG图像有关。可选值从1至100，值越高质量越高。默认值为75。例如：`{{ $logo.Resize "200x q50" }}`。
 
-##### JPEG质量（JPEG Quality）
+Rotate
+: 逆时针旋转图像至给定值（角度）。旋转会首先执行以确保尺寸正确，目的是为了手动纠正JPEG的[EXIF方向](https://github.com/golang/go/issues/4341)。例如：`{{ $logo.Resize "200x r90" }}`。
 
-仅与JPEG图像有关。可选值从1至100，值越高质量越高。默认值为75。例如：`{{ $logo.Resize "200x q50" }}`
-
-##### 旋转（Rotate）
-
-逆时针旋转图像至给定值（角度）。旋转会首先执行以确保尺寸正确，目的是为了手动纠正JPEG的[EXIF方向](https://github.com/golang/go/issues/4341)。例如：`{{ $logo.Resize "200x r90" }}`。
-
-##### 重新采样过滤器
-
-过滤器用于调整尺寸。默认是`Box`，一个用于缩小图像的，简单快速的重采样过滤器。参阅 https://github.com/disintegration/imaging 获取更多信息。如果你希望更快的处理trade质量，可以测试此选项。
+Resample Filter
+: 重新采样过滤器，用于调整尺寸。默认是`Box`，一个用于缩小图像的，简单快速的重采样过滤器。请参阅https://github.com/disintegration/imaging 获取更多信息。如果你希望更快的处理trade质量，可以试一下使用此选项。
 
 ### 性能
 

@@ -59,7 +59,7 @@ type PageGenealogist interface {
 	RelatedTo(args ...types.KeyValues) (Pages, error)
 }
 ```
-## Configure Related Content
+## 配置相关内容
 Hugo provides a sensible default configuration of Related Content, but you can fine-tune this in your configuration, on the global or language level if needed.
 
 {{% note %}}

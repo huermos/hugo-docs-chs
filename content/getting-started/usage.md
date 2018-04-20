@@ -117,7 +117,7 @@ hugo
 in 90 ms
 ```
 
-## Draft, Future, and Expired Content
+## 草稿，将来和过期内容
 
 Hugo allows you to set `draft`, `publishdate`, and even `expirydate` in your content's [front matter][]. By default, Hugo will not publish:
 

@@ -19,7 +19,7 @@ toc: true
 
 You should define the available languages in a `languages` section in your site configuration.
 
-## Configure Languages
+## 语言配置
 
 The following is an example of a site configuration for a multilingual Hugo project:
 
@@ -59,7 +59,7 @@ If you want all of the languages to be put below their respective language code,
 
 Only the obvious non-global options can be overridden per language. Examples of global options are `baseURL`, `buildDrafts`, etc.
 
-## Disable a Language
+## 禁用语言
 
 You can disable one or more languages. This can be useful when working on a new translation.
 

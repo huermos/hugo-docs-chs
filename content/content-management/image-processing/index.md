@@ -140,7 +140,7 @@ And it is used like this:
 **Tip:** Note the self-closing shortcode syntax above. The `imgproc` shortcode can be called both with and without **inner content**.
 {{% /note %}}
 
-## Image Processing Config
+## 图像处理配置
 
 You can configure an `imaging` section in `config.toml` with default image processing options:
 

@@ -1,174 +1,187 @@
 ---
-title: 配置Hugo
-linktitle: 配置
-description: 如何配置你的Hugo站点。
-date: 2018-04-17
-translate: 2018-04-18
-translator: huermos
+title: Configure Hugo
+linktitle: Configuration
+description: How to configure your Hugo site.
+date: 2013-07-01
+publishdate: 2017-01-02
+lastmod: 2017-03-05
+categories: [getting started,fundamentals]
+keywords: [configuration,toml,yaml,json]
+menu:
+  docs:
+    parent: "getting-started"
+    weight: 60
 weight: 60
+sections_weight: 60
+draft: true
+aliases: [/overview/source-directory/,/overview/configuration/]
+toc: true
 ---
 
-Hugo使用根目录下的`config.toml`，`config.yaml`或`config.json`文件作为其默认的站点配置文件。
+Hugo uses the `config.toml`, `config.yaml`, or `config.json` (if found in the
+site root) as the default site config file.
 
-用户也可以选择使用`--config`命令来加载一个或多个站点配置文件。
+The user can choose to override that default with one or more site config files
+using the command line `--config` switch.
 
-例如：
+Examples:
 
 ```
 hugo --config debugconfig.toml
 hugo --config a.toml,b.toml,c.toml
 ```
 
-> 在`--config`中的多个站点文件之间使用半角逗号（,）隔开。
+{{% note %}}
+Multiple site config files can be specified as a comma-separated string to the `--config` switch.
+{{% /note %}}
 
-## 所有配置参数
+## All Configuration Settings
 
-以下是Hugo所使用的配置参数的完整列表，括号内是其默认值。用户可以选择在配置文件中使用或修改这些值。
+The following is the full list of Hugo-defined variables with their default
+value in parentheses. Users may choose to override those values in their site
+config file(s).
 
 archetypeDir ("archetypes")
-: 放置原型文件（文章模板）的目录。
+: The directory where Hugo finds archetype files (content templates).
 
 baseURL
-: 主机名（和路径），例如：http://bep.is/ 。
+: Hostname (and path) to the root, e.g. http://bep.is/
 
 blackfriday
-: 请参阅[配置Blackfriday](/getting-started/configuration/#配置Blackfriday)。
+: See [Configure Blackfriday](/getting-started/configuration/#configure-blackfriday)
 
 buildDrafts (false)
-: 在构建时也包括草稿内容。
+: Include drafts when building.
 
 buildExpired  (false)
-: 在构建时也包括已过期的内容。
+: Include content already expired.
 
 buildFuture (false)
-: 在构建时也包括发布日期之后的内容。
+: Include content with publishdate in the future.
 
 canonifyURLs (false)
-: 将相对地址转换为绝对地址。
+: Enable to turn relative URLs into absolute.
 
 contentDir ("content")
-: 放置文章内容的目录。
+: The directory from where Hugo reads content files.
 
 dataDir ("data")
-: 放置数据文件的目录。
+: The directory from where Hugo reads data files.
 
 defaultContentLanguage ("en")
-: 如果没有指定语言，则默认显示此语言。
+: Content without language indicator will default to this language.
 
 defaultContentLanguageInSubdir (false)
-: 在子目录中使用默认的文章语言，例如`content/en/`。根目录`/`将会重定向至`/en/`。
+: Render the default content language in subdir, e.g. `content/en/`. The site root `/` will then redirect to `/en/`.
 
 disableHugoGeneratorInject (false)
-: Hugo在默认情况下，会**仅在站点主页**的HTML头部生成一个meta标签。你可以在这里把他关闭。但我们不希望你这样做，因为这是我们了解Hugo人气上涨的一个途径，十分感谢！
+: Hugo will, by default, inject a generator meta tag in the HTML head on the _home page only_. You can turn it off, but we would really appreciate if you don't, as this is a good way to watch Hugo's popularity on the rise.
 
 disableKinds ([])
-: 禁用**指定类型**的所有页面。可用的值包括：`"page"`, `"home"`, `"section"`, `"taxonomy"`, `"taxonomyTerm"`, `"RSS"`, `"sitemap"`, `"robotsTXT"`, `"404"`。
+: Enable disabling of all pages of the specified *Kinds*. Allowed values in this list: `"page"`, `"home"`, `"section"`, `"taxonomy"`, `"taxonomyTerm"`, `"RSS"`, `"sitemap"`, `"robotsTXT"`, `"404"`.
 
 disableLiveReload (false)
-: 禁用浏览器的实时预览。
+: Disable automatic live reloading of browser window.
 
 disablePathToLower (false)
-: 不将URL地址转换为小写。
+: Do not convert the url/path to lowercase.
 
 enableEmoji (false)
-: 启用Emoji表情支持。请参阅[Emoji表情表](https://www.webpagefx.com/tools/emoji-cheat-sheet/)。
+: Enable Emoji emoticons support for page content; see the [Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
 
 enableGitInfo (false)
-: 如果Hugo使用Git进行版本控制，将为每个页面启用`.GitInfo`对象。这会同时更新每个页面最后提交内容的`Lastmod`参数。
+: Enable `.GitInfo` object for each page (if the Hugo site is versioned by Git). This will then update the `Lastmod` parameter for each page using the last git commit date for that content file.
 
 enableMissingTranslationPlaceholders (false)
-: 如果缺少相应的翻译，则使用占位符代替缺省值或空字符串。
+: Show a placeholder instead of the default value or an empty string if a translation is missing.
 
 enableRobotsTXT (false)
-: 生成`robots.txt`文件。
+: Enable generation of `robots.txt` file.
 
 frontmatter
-: 请参阅[头文件配置](/getting-started/configuration/#头文件配置)。
+
+: See [Front matter Configuration](#configure-front-matter).
 
 footnoteAnchorPrefix ("")
-: 脚注锚点的前缀。
+: Prefix for footnote anchors.
 
 footnoteReturnLinkContents ("")
-: 脚注链接的显示文本。
+: Text to display for footnote return links.
 
 googleAnalytics ("")
-: Google Analytics的tracking ID。
+: Google Analytics tracking ID.
 
 hasCJKLanguage (false)
-: 开启后将在内容中自动检测中文，日文和韩文。这回使`.Summary`和`.WordCount`正确运作。
+: If true, auto-detect Chinese/Japanese/Korean Languages in the content. This will make `.Summary` and `.WordCount` behave correctly for CJK languages.
 
 imaging
-: 请参阅[图像处理配置](content-management/image-processing/#图像处理配置)。
+: See [Image Processing Config](/content-management/image-processing/#image-processing-config).
 
 languages
-: 请参阅[语言配置](/content-management/multilingual/#语言配置)。
+: See [Configure Languages](/content-management/multilingual/#configure-languages).
 
 languageCode ("")
-: 站点的语言代码。
+: The site's language code.
 
 disableLanguages
-: 请参阅[禁用语言](/content-management/multilingual/#禁用语言)。
+: See [Disable a Language](/content-management/multilingual/#disable-a-language)
 
 layoutDir ("layouts")
-: 放置布局（模板）的目录。
+: The directory from where Hugo reads layouts (templates).
 
 log (false)
-: 启用日志。
+: Enable logging.
 
 logFile ("")
-: 日志文件路径（如果设置了路径将自动启用日志记录）。
+: Log File path (if set, logging enabled automatically).
 
 menu
-: 请参阅[在目录中添加非内容条目](/content-management/menus/#在目录中添加非内容条目)。
+: See [Add Non-content Entries to a Menu](/content-management/menus/#add-non-content-entries-to-a-menu).
 
 metaDataFormat ("toml")
-: 元数据的格式。可用的值包括：`"toml"`，`"yaml"`和`"json"`。
+: Front matter meta-data format. Valid values: `"toml"`, `"yaml"`, or `"json"`.
 
 newContentEditor ("")
-: 创建新内容时使用的编辑器
+: The editor to use when creating new content.
 
 noChmod (false)
-: 不同步文件的权限。
+: Don't sync permission mode of files.
 
 noTimes (false)
-: 不同步文件的修改时间。
+: Don't sync modification time of files.
 
 paginate (10)
-: [分页](/templates/pagination/)中每页的默认页数。
+: Default number of pages per page in [pagination](/templates/pagination/).
 
 paginatePath ("page")
-: 分页使用的路径，例如：https://example.com/page/2。
+: The path element used during pagination (https://example.com/page/2).
 
 permalinks
-: 请参阅[内容管理](/content-management/urls/#固定链接)。
+: See [Content Management](/content-management/urls/#permalinks).
 
 pluralizeListTitles (true)
-: 列表中多标题
+: Pluralize titles in lists.
 
 preserveTaxonomyNames (false)
-: 保留分类名称中的特殊字符（"Gérard Depardieu"和"Gerard Depardieu"）。
+: Preserve special characters in taxonomy names ("Gérard Depardieu" vs "Gerard Depardieu").
 
 publishDir ("public")
-: Hugo站点生成时的静态文件（HTML等）目录。
+: The directory to where Hugo will write the final static site (the HTML files etc.).
 
 pygmentsCodeFencesGuessSyntax (false)
-: 当代码块没有指定制定语言时启用语法猜测。
+: Enable syntax guessing for code fences without specified language.
 
 pygmentsStyle ("monokai")
-: 语法高亮的主题颜色或样式，请参阅[Pygments主题](https://help.farbox.com/pygments.html)。
+: Color-theme or style for syntax highlighting. See [Pygments Color Themes](https://help.farbox.com/pygments.html).
 
 pygmentsUseClasses (false)
-: 语法高亮使用外部CSS样式。
+: Enable using external CSS for syntax highlighting.
 
 related
-: 请参阅[相关内容](/content-management/related/#配置相关内容)。
+: See [Related Content](/content-management/related/#configure-related-content).
 
 relativeURLs (false)
-: 启用这个选项会时
-
-注意这并不会影响绝对URL。
-
-Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+: Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
 
 rssLimit (unlimited)
 : Maximum number of items in the RSS feed.
@@ -287,7 +300,7 @@ ignoreFiles = [ "\\.foo$", "\\.boo$" ]
 
 The above is a list of regular expressions. Note that the backslash (`\`) character is escaped in this example to keep TOML happy.
 
-## 头文件配置
+## Configure Front Matter
 
 ### Configure Dates
 
@@ -348,7 +361,7 @@ The above will try first to extract the value for `.Date` from the filename, the
 `:git`
 : This is the Git author date for the last revision of this content file. This will only be set if `--enableGitInfo` is set or `enableGitInfo = true` is set in site config.
 
-## 配置Blackfriday
+## Configure Blackfriday
 
 [Blackfriday](https://github.com/russross/blackfriday) is Hugo's built-in Markdown rendering engine.
 

@@ -3,15 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	{{ block "style" . }}{{ end }}
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/md.css">
 	<meta name="keywords" content="hugo, blog, docs" />
 	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 </head>
 <body>
-	<div class="right-nav">{{ $currentPage := . }}{{ range .Site.Menus.main }}
-		<a{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} class="right-nav-active"{{ end }} href="{{ .URL | safeURL }}">{{ .Name }}</a>{{ end }}
-	</div>
-
 	<div class="container">
 		{{ block "post" . }}
 		{{ end }}

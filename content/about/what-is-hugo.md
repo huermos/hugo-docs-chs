@@ -4,11 +4,11 @@ linktitle: 什么是Hugo
 description: Hugo是一款使用Go语言编写的，现代的高速静态网站生成器，旨在让网站创作变得更加有趣。
 date: 2018-02-04
 translate: 2018-04-16
+translator: huermos
 weight: 10
-sections_weight: 10
 ---
 
-Hugo是一个通用的网站框架。从技术上讲，Hugo是一个[静态站点生成器](../../about/benefits/)。不像系统在用户每次访问时动态的创建页面，Hugo在你新建或更新文章时就开始创建页面。由于网站的浏览次数远远多于编辑次数，因此Hugo旨在为你的网站用户提供最佳的浏览体验，同时为你的网站作者提供理想的写作体验。
+Hugo是一个通用的网站框架。从技术上讲，Hugo是一个[静态站点生成器](/about/benefits/)。不像系统在用户每次访问时动态的创建页面，Hugo在你新建或更新文章时就开始创建页面。由于网站的浏览次数远远多于编辑次数，因此Hugo旨在为你的网站用户提供最佳的浏览体验，同时为你的网站作者提供理想的写作体验。
 
 使用Hugo构建的网站非常快速和安全。Hugo允许你在任何地方托管，包括[Netlify][], [Heroku][], [GoDaddy][], [DreamHost][], [GitHub Pages][], [GitLab Pages][], [Surge][], [Aerobatic][], [Firebase][], [Google Cloud Storage][], [Amazon S3][], [Rackspace][], [Azure][], and [CloudFront][]，并且可以与CDN良好的协作。Hugo的运行不依赖数据库或其他依赖库，如Ruby，Python或PHP。
 
@@ -16,7 +16,7 @@ Hugo是一个通用的网站框架。从技术上讲，Hugo是一个[静态站�
 
 ## Hugo究竟有多快？
 
-{{< youtube "CdiDYZ51a2o" >}}
+###### 此处视频请参阅[YouTube](https://www.youtube.com/watch?v=CdiDYZ51a2o)。
 
 ## Hugo如何运行？
 

@@ -3,17 +3,18 @@ title: 快速入门
 linktitle: 快速入门
 description: 使用Ananke主题创建一个Hugo站点。
 date: 2017-09-13
-trabskate: 2018-07-17
+translate: 2018-07-17
+translator: huermos
 weight: 10
-sections_weight: 10
 ---
 
-> 此快速入门示例运行在`macOS`平台上。有关如何在其他操作系统上安装Hugo，请参阅[安装](../installing)。
+> 此快速入门示例运行在`macOS`平台上。有关如何在其他操作系统上安装Hugo，请参阅[安装](/getting-started/installing/)。
+> 
 > 同时，你还需要安装[Git](https://git-scm.com/downloads)来运行本教程。
 
 ## 第一步：安装Hugo
 
-> `Homebrew`是`macOS`平台下的软件包管理工具，你可以从[brew.sh](https://brew.sh/)安装。如果你使用Windows或其他操作系统，请参阅[安装](../installing)。
+> `Homebrew`是`macOS`平台下的软件包管理工具，你可以从[brew.sh](https://brew.sh/)安装。如果你使用Windows或其他操作系统，请参阅[安装](/getting-started/installing/)。
 
 ```bash
 brew install hugo
@@ -25,6 +26,7 @@ brew install hugo
 hugo version
 ```
 
+###### 此处视频请参阅[原文](https://gohugo.io/getting-started/quick-start/)。
 
 ## 第二步：创建站点
 
@@ -34,7 +36,9 @@ hugo new site quickstart
 
 这个命令将把Hugo创建在`quickstart`文件夹中。
 
-## 第二步：加载主题
+###### 此处视频请参阅[原文](https://gohugo.io/getting-started/quick-start/)。
+
+## 第三步：加载主题
 
 访问[官方主题站（英文）](https://themes.gohugo.io/)来获取更多主题。此示例将使用[Ananke主题](https://themes.gohugo.io/gohugo-theme-ananke/)。
 
@@ -48,13 +52,15 @@ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/anan
 echo 'theme = "ananke"' >> config.toml
 ```
 
+###### 此处视频请参阅[原文](https://gohugo.io/getting-started/quick-start/)。
+
 ## 第四步：添加文章
 
 ```
 hugo new posts/my-first-post.md
 ```
 
-现在你已经创建好了一篇文章，你可以选择在执行以下步骤前先编辑一下内容。完成后，在[草稿模式](../usage/)下运行Hugo：
+现在你已经创建好了一篇文章，你可以选择在执行以下步骤前先编辑一下内容。完成后，在[草稿模式](/getting-started/usage/#草稿-将来和过期内容)下运行Hugo：
 
 ```
 ▶ hugo server -D
@@ -77,11 +83,11 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-**在浏览器中输入[http://localhost:1313/](http://localhost:1313/)打开这个Hugo站点。**
+**现在，在浏览器中输入[http://localhost:1313/](http://localhost:1313/)打开这个Hugo站点。**
 
 ## 第五步：自定义主题
 
-你的网站看起来不错，但在你上传并发布之前，有一些配置需要调整一下。
+你的网站应该可以正确运行了。但是在你上传并发布之前，有一些配置需要设定一下。
 
 ### 网站配置
 
@@ -100,8 +106,8 @@ theme = "ananke"
 
 有关此主题（Ananke）的配置选项，请参阅[Ananke主题](https://github.com/budparr/gohugo-theme-ananke)。
 
-**有关Hugo主题的配置选项，请参阅[自定义主题](../../themes/customizing/)。**
+**有关Hugo主题的配置选项，请参阅[自定义主题](/themes/customizing/)。**
 
-## 概览
+## 总结
 
-本页面视频请参见[原文](https://gohugo.io/getting-started/quick-start/)。
+###### 此处视频请参阅[原文](https://gohugo.io/getting-started/quick-start/)。

@@ -114,7 +114,7 @@ menu:
 ---
 ```
 
-## Add Non-content Entries to a Menu
+## 在目录中添加非内容条目
 
 You can also add entries to menus that aren’t attached to a piece of content. This takes place in your Hugo project's [`config` file][config].
 

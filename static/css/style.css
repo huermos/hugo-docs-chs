@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background: #F9F9F9;
+}
+
+.container {
+	margin-left: 30%;
+	max-width: 45rem;
+}
