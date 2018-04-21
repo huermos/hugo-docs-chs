@@ -5,4 +5,3 @@ title = "Hugo中文化官方文档"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 hasCJKLanguage = true
-relativeURLs = true

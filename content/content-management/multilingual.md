@@ -19,7 +19,7 @@ toc: true
 
 You should define the available languages in a `languages` section in your site configuration.
 
-## 语言配置
+## 配置语言
 
 The following is an example of a site configuration for a multilingual Hugo project:
 

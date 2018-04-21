@@ -44,7 +44,7 @@ buildFuture (false)
 : 在构建时也包括发布日期之后的内容。
 
 canonifyURLs (false)
-: 将相对地址转换为绝对地址。
+: 将相对链接转换为绝对链接。
 
 contentDir ("content")
 : 放置文章内容的目录。
@@ -68,7 +68,7 @@ disableLiveReload (false)
 : 禁用浏览器的实时预览。
 
 disablePathToLower (false)
-: 不将URL地址转换为小写。
+: 不将链接地址转换为小写。
 
 enableEmoji (false)
 : 启用Emoji表情支持。请参阅[Emoji表情表](https://www.webpagefx.com/tools/emoji-cheat-sheet/)。
@@ -83,7 +83,7 @@ enableRobotsTXT (false)
 : 生成`robots.txt`文件。
 
 frontmatter
-: 请参阅[头文件配置](/getting-started/configuration/#头文件配置)。
+: 请参阅[配置头文件](#配置头文件)。
 
 footnoteAnchorPrefix ("")
 : 脚注锚点的前缀。
@@ -95,13 +95,13 @@ googleAnalytics ("")
 : Google Analytics的tracking ID。
 
 hasCJKLanguage (false)
-: 开启后将在内容中自动检测中文，日文和韩文。这回使`.Summary`和`.WordCount`正确运作。
+: 开启后将在内容中检测是否存在中文，日文和韩文。这会使`.Summary`和`.WordCount`正确运作。
 
 imaging
 : 请参阅[图像处理配置](content-management/image-processing/#图像处理配置)。
 
 languages
-: 请参阅[语言配置](/content-management/multilingual/#语言配置)。
+: 请参阅[配置语言](/content-management/multilingual/#配置语言)。
 
 languageCode ("")
 : 站点的语言代码。
@@ -164,69 +164,68 @@ related
 : 请参阅[相关内容](/content-management/related/#配置相关内容)。
 
 relativeURLs (false)
-: 启用这个选项会时
-
-注意这并不会影响绝对URL。
-
-Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+: 启用这个选项后，相对链接的地址会以此文件所在的目录为根目录。注意这并不会影响绝对链接。
 
 rssLimit (unlimited)
-: Maximum number of items in the RSS feed.
+: RSS信源（Feed）的最大数量。
 
 sectionPagesMenu ("")
-: See ["Section Menu for Lazy Bloggers"](/templates/menu-templates/#section-menu-for-lazy-bloggers).
+: 请参阅[简单章节目录](/templates/menu-templates/#简单章节目录)
 
 sitemap
-: Default [sitemap configuration](/templates/sitemap-template/#configure-sitemap-xml).
+: 默认的[网站地图配置](/templates/sitemap-template/#配置-sitemap-xml)。
 
 staticDir ("static")
-: Relative directory from where Hugo reads static files.
+: 放置静态文件的目录。
 
 stepAnalysis (false)
-: Display memory and timing of different steps of the program.
+: 显示程序每一步运行消耗的内存和运行时间。
 
 summaryLength (70)
-: The length of text to show in a [`.Summary`](/content-management/summaries/#hugo-defined-automatic-summary-splitting).
+: 在[`.Summary`](/content-management/summaries/#默认-自动分割)中显示的文本长度。
 
 taxonomies
-: See [Configure Taxonomies](/content-management/taxonomies#configure-taxonomies).
+: 请参阅[配置分类法](/content-management/taxonomies#配置分类法)。
 
 theme ("")
-: Theme to use (located by default in `/themes/THEMENAME/`).
+: 使用的主题（保持相同的文件名并放在`/themes/`文件夹下）。
 
 themesDir ("themes")
-: The directory where Hugo reads the themes from.
+: 放置主题文件的目录。
 
 title ("")
-: Site title.
+: 网站标题。
 
 uglyURLs (false)
-: When enabled, creates URL of the form `/filename.html` instead of `/filename/`.
+: 开启后，内容网址将用`/filename.html`代替`/filename/`。
 
 verbose (false)
-: Enable verbose output.
+: 启用详细输出。
 
 verboseLog (false)
-: Enable verbose logging.
+: 启用详细日志。
 
 watch (false)
-: Watch filesystem for changes and recreate as needed.
+: 监视文件系统的变化，并在需要时重新创建。
 
-{{% note %}}
-If you are developing your site on a \*nix machine, here is a handy shortcut for finding a configuration option from the command line:
+> 如果你在类Unix系统上使用Hugo，以下是一个从命令行查找配置选项的快捷方式：
+
 ```
 cd ~/sites/yourhugosite
 hugo config | grep emoji
 ```
 
-which shows output like
+运行后会输出：
 
 ```
 enableemoji: true
 ```
-{{% /note %}}
 
-## Configuration Lookup Order
+## 配置查找顺序
+
+与模板的[查找顺序](/templates/lookup-order/)类似，Hugo也有一个默认的规则去查找
+
+Configuration Lookup Order
 
 Similar to the template [lookup order][], Hugo has a default set of rules for searching for a configuration file in the root of your website's source directory as a default behavior:
 
@@ -234,10 +233,12 @@ Similar to the template [lookup order][], Hugo has a default set of rules for se
 2. `./config.yaml`
 3. `./config.json`
 
+在你的`config`文件中，你可以
+
 In your `config` file, you can direct Hugo as to how you want your website rendered, control your website's menus, and arbitrarily define site-wide parameters specific to your project.
 
 
-## Example Configuration
+## 示例配置
 
 The following is a typical example of a configuration file. The values nested under `params:` will populate the [`.Site.Params`][] variable for use in [templates][]:
 
@@ -287,7 +288,7 @@ ignoreFiles = [ "\\.foo$", "\\.boo$" ]
 
 The above is a list of regular expressions. Note that the backslash (`\`) character is escaped in this example to keep TOML happy.
 
-## 头文件配置
+## 配置头文件
 
 ### Configure Dates
 
@@ -384,7 +385,7 @@ Hugo v0.20 introduced the ability to render your content to multiple output form
 [`.Site.Params`]: /variables/site/
 [directory structure]: /getting-started/directory-structure
 [json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "Specification for JSON, JavaScript Object Notation"
-[lookup order]: /templates/lookup-order/
+[lookup order]: 
 [Output Formats]: /templates/output-formats/
 [templates]: /templates/
 [toml]: https://github.com/toml-lang/toml

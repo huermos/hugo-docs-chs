@@ -68,7 +68,7 @@ The following is an example:
 Use the [`absLangUrl`](/functions/abslangurl) or [`relLangUrl`](/functions/rellangurl) functions if your theme makes use of the [multilingual feature](/content-management/multilingual/). In contrast to `absURL` and `relURL`, these two functions add the correct language prefix to the url.
 {{% /note %}}
 
-## Section Menu for Lazy Bloggers
+## 简单章节目录
 
 To enable this menu, configure `sectionPagesMenu` in your site `config`:
 

@@ -26,7 +26,7 @@ With the use of the `.Summary` [page variable][pagevariables], Hugo generates su
 
 It is natural to accompany the summary with links to the original content, and a common design pattern is to see this link in the form of a "Read More ..." button. See the `.RelPermalink`, `.Permalink`, and `.Truncated` [page variables][pagevariables].
 
-### Hugo-defined: Automatic Summary Splitting
+### 默认：自动分割
 
 By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use in your templates. Taking the Hugo-defined approach to summaries may save time, but it has pros and cons:
 
@@ -37,7 +37,7 @@ By default, Hugo automatically takes the first 70 words of your content as its s
 The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive white space characters. If you are creating content in a `CJK` language and want to use Hugo's automatic summary splitting, set `hasCJKLanguage` to `true` in you [site configuration](/getting-started/configuration/).
 {{% /note %}}
 
-### User-defined: Manual Summary Splitting
+### 配置：手动分割
 
 Alternatively, you may add the <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> summary divider where you want to split the article. For [org content][org], use `# more` where you want to split the article. Content that comes before the summary divider will be used as that content's summary and stored in the `.Summary` page variable with all HTML formatting intact.
 
