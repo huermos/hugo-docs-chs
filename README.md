@@ -42,7 +42,8 @@ hugo
 * shortcodes：简码
 * aliases：别名
 * permalinks：固定连接
-
+* render: 渲染
+* section：节
 
 ```
 请参阅[]()

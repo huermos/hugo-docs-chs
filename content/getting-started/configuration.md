@@ -223,26 +223,19 @@ enableemoji: true
 
 ## 配置查找顺序
 
-与模板的[查找顺序](/templates/lookup-order/)类似，Hugo也有一个默认的规则去查找
-
-Configuration Lookup Order
-
-Similar to the template [lookup order][], Hugo has a default set of rules for searching for a configuration file in the root of your website's source directory as a default behavior:
+与模板的[查找顺序](/templates/lookup-order/)类似，Hugo也有一个默认的顺序去查找网站目录的配置文件：
 
 1. `./config.toml`
 2. `./config.yaml`
 3. `./config.json`
 
-在你的`config`文件中，你可以
-
-In your `config` file, you can direct Hugo as to how you want your website rendered, control your website's menus, and arbitrarily define site-wide parameters specific to your project.
-
+在你的`config`文件中，你可以自定义网站的渲染效果，目录和特定参数。
 
 ## 示例配置
 
-The following is a typical example of a configuration file. The values nested under `params:` will populate the [`.Site.Params`][] variable for use in [templates][]:
+这是一个配置文件的示例。在`params:`下的值会插入到[模板](/templates/)的[`.Site.Params`](/variables/site/)中。
 
-{{< code-toggle file="config">}}
+```
 baseURL: "https://yoursite.example.com/"
 title: "My Hugo Site"
 footnoteReturnLinkContents: "↩"
@@ -256,46 +249,39 @@ params:
     - "foo1"
     - "foo2"
   SidebarRecentLimit: 5
-{{< /code-toggle >}}
+```
 
-## Configure with Environment Variables
+## 使用环境变量配置
 
-In addition to the 3 config options already mentioned, configuration key-values can be defined through operating system environment variables.
+除了上文中提到的三个配置选项外，还可以直接从操作系统的环境变量中定义配置键值。
 
-For example, the following command will effectively set a website's title on Unix-like systems:
+例如，在类Unix系统中运行以下命令也可以直接设置你的网站标题：
 
 ```
 $ env HUGO_TITLE="Some Title" hugo
 ```
 
-This is really useful if you use a service such as Netlify to deploy your site. Look at the Hugo docs [Netlify configuration file](https://github.com/gohugoio/hugoDocs/blob/master/netlify.toml) for an example.
+因此，如果你使用例如Netlify这样的服务来部署你的网站，这将非常有用。请参阅[Netlify配置文件](https://github.com/gohugoio/hugoDocs/blob/master/netlify.toml)中的示例。
 
-{{% note "Setting Environment Variables" %}}
-Names must be prefixed with `HUGO_` and the configuration key must be set in uppercase when setting operating system environment variables.
-{{% /note %}}
+> 当你设置操作系统的环境变量时，配置名必须大写且加上`HUGO_`前缀。
 
-{{< todo >}}
-Test and document setting params via JSON env var.
-{{< /todo >}}
+## 在渲染时忽略文件
 
-## Ignore Files When Rendering
-
-The following statement inside `./config.toml` will cause Hugo to ignore files ending with `.foo` and `.boo` when rendering:
+在`./config.toml`中进行下列设置会使Hugo在渲染时忽略以`.foo`和`.boo`结尾的文件：
 
 ```
 ignoreFiles = [ "\\.foo$", "\\.boo$" ]
 ```
 
-The above is a list of regular expressions. Note that the backslash (`\`) character is escaped in this example to keep TOML happy.
+这是一个正则表达式。别忘了在TOML中转义反斜杠（`\`）。
 
 ## 配置头文件
 
-### Configure Dates
+### 配置日期
 
-Dates are important in Hugo, and you can configure how Hugo assigns dates to your content pages. You do this by adding a `frontmatter` section to your `config.toml`.
+日期在Hugo中非常重要，你可以在`config.toml`加入一个`frontmatter`节来指定Hugo如何在内容页面中分配日期。
 
-
-The default configuration is:
+默认的配置是：
 
 ```toml
 [frontmatter]
@@ -305,12 +291,12 @@ publishDate = ["publishDate", "date"]
 expiryDate = ["expiryDate"]
 ```
 
-If you, as an example, have a non-standard date parameter in some of your content, you can override the setting for `date`:
+如果你在部分内容中使用了非标准的日期参数，你可以在`date`中覆盖以下设置：
 
- ```toml
+```toml
 [frontmatter]
 date = [ "myDate", ":default"]
- ```
+```
 
 The `:default` is a shortcut to the default settings. The above will set `.Date` to the date value in `myDate` if present, if not we will look in `date`,`publishDate`, `lastmod` and pick the first valid date.
 
@@ -324,10 +310,10 @@ The special date handlers are:
 
 An example:
 
- ```toml
+```toml
 [frontmatter]
 lastmod = ["lastmod" ,":fileModTime", ":default"]
- ```
+```
 
 
 The above will try first to extract the value for `.Lastmod` starting with the `lastmod` front matter parameter, then the content file's modification timestamp. The last, `:default` should not be needed here, but Hugo will finally look for a valid date in `:git`, `date` and then `publishDate`.
