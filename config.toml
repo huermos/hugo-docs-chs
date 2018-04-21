@@ -1,6 +1,7 @@
 baseURL = "localhost:1313"
 languageCode = "en-us"
 title = "Hugo中文化官方文档"
+theme = "gohugoioTheme"
 
 defaultContentLanguage = "en"
 enableRobotsTXT = true

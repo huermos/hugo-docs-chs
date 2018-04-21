@@ -298,50 +298,46 @@ expiryDate = ["expiryDate"]
 date = [ "myDate", ":default"]
 ```
 
-The `:default` is a shortcut to the default settings. The above will set `.Date` to the date value in `myDate` if present, if not we will look in `date`,`publishDate`, `lastmod` and pick the first valid date.
+`:default`是默认设置的快捷方式。以上设置会让`.Date`优先选择存在的`myDate`的数据。如果不存在，再从`date`，`publishDate`和`lastmod`中按顺序选择有效日期。
 
-In the list to the right, values starting with ":" are date handlers with a special meaning (see below). The others are just names of date parameters (case insensitive) in your front matter configuration.  Also note that Hugo have some built-in aliases to the above: `lastmod` => `modified`, `publishDate` => `pubdate`, `published` and `expiryDate` => `unpublishdate`. With that, as an example, using `pubDate` as a date in front matter, will, by default, be assigned to `.PublishDate`.
+在右边的列表中，只有以":"开头的值具有特殊含义（见下文）。其他的都是在头文件中普通的日期参数（不区分大小写）。还要注意的是Hugo具有一些内置别名：`lastmod`→`modified`，`publishDate`→`pubdate`，`published`与`expiryDate`→`unpublishdate`。因此，在头文件中使用`pubDate`默认会分配给`.PublishDate`。
 
-The special date handlers are:
-
+以下是一些特殊的日期处理：
 
 `:fileModTime`
-: Fetches the date from the content file's last modification timestamp.
+: 从文件的上次修改日期中获得时间。
 
-An example:
+例如：
 
 ```toml
 [frontmatter]
 lastmod = ["lastmod" ,":fileModTime", ":default"]
 ```
 
-
-The above will try first to extract the value for `.Lastmod` starting with the `lastmod` front matter parameter, then the content file's modification timestamp. The last, `:default` should not be needed here, but Hugo will finally look for a valid date in `:git`, `date` and then `publishDate`.
-
+这将首先获取头文件中的`lastmod`给`.Lastmod`，然后才尝试查询文件的修改日期。最后，这里的`:default`是不必要的，但是Hugo依然会最后查询`:git`，`date`和`publishDate`中的可用值。
 
 `:filename`
-: Fetches the date from the content file's filename. For example, `218-02-22-mypage.md` will extract the date `218-02-22`. Also, if `slug is not set, `mypage` will be used as the value for `.Slug`.
+: 从内容文件的文件名中获取日期。例如从`2018-02-22-mypage.md`中获取日期`2018-02-22`。另外，如果你没有设置`slug`，将会把`mypage`带入`.Slug`。
 
-An example:
+例如：
 
 ```toml
 [frontmatter]
 date  = [":filename", ":default"]
 ```
 
-The above will try first to extract the value for `.Date` from the filename, then it will look in front matter parameters `date`, `publishDate` and lastly `lastmod`.
-
+这将首先获取文件名中的日期用于`.Date`，然后才尝试查询头文件中的`date`，`publishDate`和`lastmod`。
 
 `:git`
-: This is the Git author date for the last revision of this content file. This will only be set if `--enableGitInfo` is set or `enableGitInfo = true` is set in site config.
+: 这是此内容文件的作者上次git此文件的日期。只有在设置了`--enableGitInfo`或`enableGitInfo = true`时可用。
 
 ## 配置Blackfriday
 
-[Blackfriday](https://github.com/russross/blackfriday) is Hugo's built-in Markdown rendering engine.
+[Blackfriday](https://github.com/russross/blackfriday)是Hugo内置的Markdown渲染引擎。
 
-Hugo typically configures Blackfriday with sane default values that should fit most use cases reasonably well.
+Hugo默认将Blackfriday配置为更符合常理的参数。
 
-However, if you have specific needs with respect to Markdown, Hugo exposes some of its Blackfriday behavior options for you to alter. The following table lists these Hugo options, paired with the corresponding flags from Blackfriday's source code ( [html.go](https://github.com/russross/blackfriday/blob/master/html.go) and [markdown.go](https://github.com/russross/blackfriday/blob/master/markdown.go)).
+然而，如果你对Markdown有特殊需求，Hugo也公开了一部分Blackfriday行为选项来供你更改。下表列出了与Blackfriday源代码（[html.go](https://github.com/russross/blackfriday/blob/master/html.go)和[markdown.go](https://github.com/russross/blackfriday/blob/master/markdown.go)）所匹配的对应选项：
 
 {{< readfile file="/content/readfiles/bfconfig.md" markdown="true" >}}
 
@@ -362,17 +358,12 @@ However, if you have specific needs with respect to Markdown, Hugo exposes some 
 
 Hugo v0.20 introduced the ability to render your content to multiple output formats (e.g., to JSON, AMP html, or CSV). See [Output Formats][] for information on how to add these values to your Hugo project's configuration file.
 
-## Configuration Format Specs
+## 配置格式规范
 
-* [TOML Spec][toml]
-* [YAML Spec][yaml]
-* [JSON Spec][json]
+* [TOML Spec](https://github.com/toml-lang/toml)
+* [YAML Spec](http://yaml.org/spec/)
+* [JSON Spec](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)
 
 [`.Site.Params`]: /variables/site/
 [directory structure]: /getting-started/directory-structure
-[json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "Specification for JSON, JavaScript Object Notation"
-[lookup order]: 
 [Output Formats]: /templates/output-formats/
-[templates]: /templates/
-[toml]: https://github.com/toml-lang/toml
-[yaml]: http://yaml.org/spec/

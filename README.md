@@ -47,6 +47,7 @@ hugo
 * permalinks：固定连接
 * render: 渲染
 * section：节
+* built-in：内置
 
 ### 插入内容
 
