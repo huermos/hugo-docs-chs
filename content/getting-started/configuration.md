@@ -341,29 +341,23 @@ Hugo默认将Blackfriday配置为更符合常理的参数。
 
 {{< readfile file="/content/readfiles/bfconfig.md" markdown="true" >}}
 
-{{% note %}}
-1. Blackfriday flags are *case sensitive* as of Hugo v0.15.
-2. Blackfriday flags must be grouped under the `blackfriday` key and can be set on both the site level *and* the page level. Any setting on a page will override its respective site setting.
-{{% /note %}}
+> 1. 从Hugo v0.15开始，Blackfriday标志区分大小写。
+> 2. Blackfriday标志必须分列在`blackfriday`下，并且可以同时在网站级别和页面级别中设置。页面级别中的任何设置都会覆盖网站级别的设置。
 
-{{< code-toggle file="config" >}}
+```
 [blackfriday]
   angledQuotes = true
   fractions = false
   plainIDAnchors = true
   extensions = ["hardLineBreak"]
-{{< /code-toggle >}}
+```
 
-## Configure Additional Output Formats
+## 配置额外的输出格式
 
-Hugo v0.20 introduced the ability to render your content to multiple output formats (e.g., to JSON, AMP html, or CSV). See [Output Formats][] for information on how to add these values to your Hugo project's configuration file.
+Hugo v0.20以后引入了将内容渲染为多种输出格式（如JSON，AMP html或CSV）的功能。有关如何如何在Hugo项目的配置文件中启用这个功能，请参阅[输出格式](/templates/output-formats/)。
 
 ## 配置格式规范
 
 * [TOML Spec](https://github.com/toml-lang/toml)
 * [YAML Spec](http://yaml.org/spec/)
 * [JSON Spec](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)
-
-[`.Site.Params`]: /variables/site/
-[directory structure]: /getting-started/directory-structure
-[Output Formats]: /templates/output-formats/
