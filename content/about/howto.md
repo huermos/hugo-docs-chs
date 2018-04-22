@@ -4,11 +4,12 @@ linktitle: Hugo v0.32 版本更新说明
 description: 关于页面组织，图像处理等。
 date: 2018-04-02
 translate: 2018-04-16
+lastmod: 2018-04-16
 translator: huermos
-weight: 2
+weight: 10
 ---
 
-> 本页面内容为0.32版本更新内容，将在未来移动到其对应的页面。临时置于此处以供快速参考和调试。
+> 本页面内容为Hugo 0.32版本更新内容，将在未来移动到其对应的页面。临时置于此处以供快速参考和调试。
 
 另请参阅[bep](https://github.com/bep/)的这个demo，他提供了下列新功能：
 

@@ -4,8 +4,9 @@ linktitle: 静态的优势
 description: 优秀的性能，安全性和易用性只是静态网站生成器吸引人的部分原因。
 date: 2018-03-16
 translate: 2018-04-16
+lastmod: 2018-04-16
 translator: huermos
-weight: 30
+weight: 40
 ---
 
 静态网站生成器的目的是将内容以HTML的方式呈现。网络上所见到的大多是动态网站生成器。他们运行在HTTP服务器上，用来为用户的每次访问创建相应的HTML网页。

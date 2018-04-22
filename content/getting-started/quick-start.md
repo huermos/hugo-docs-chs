@@ -4,6 +4,7 @@ linktitle: 快速入门
 description: 使用Ananke主题创建一个Hugo站点。
 date: 2017-09-13
 translate: 2018-07-17
+lastmod: 2018-04-17
 translator: huermos
 weight: 10
 ---

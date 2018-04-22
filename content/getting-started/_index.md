@@ -3,6 +3,7 @@ title: 开始使用
 linktitle: 总览
 description: 在你的操作系统上安装并开始使用Hugo。
 translate: 2018-04-17
+lastmod: 2018-04-17
 translator: huermos
 weight: 1
 ---

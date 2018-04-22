@@ -4,6 +4,7 @@ linktitle: 许可证
 description: 0.15版本及以后的发行版本Hugo适用于Apache 2.0许可证。
 date: 2017-09-13
 translate: 2018-04-16
+lastmod: 2018-04-16
 translator: huermos
 weight: 60
 ---
