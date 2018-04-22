@@ -1,9 +1,50 @@
 body {
-  margin: 0;
-  background: #F9F9F9;
+	margin: 0;
+	background: #f9f9f9;
 }
 
-.container {
+article, aside, footer, nav, section {
+	display: block;
+}
+
+.nav {
+	width: 100%;
+	padding: 2rem 0;
+	background: #0a1922;
+}
+
+.nav-center {
+	margin: 0 auto;
+	max-width: 96rem;
+}
+
+.nav-logo {
+	margin-right: 2rem;
+	padding-left: 2rem;
+	opacity: 1;
+	transition: opacity 0.15s ease-in;
+}
+
+.nav-logo:focus, .nav-logo:hover {
+	opacity: 0.5;
+	transition: opacity .15s ease-in;
+}
+
+.nav-logo a {
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	font-family: "Muli",avenir,"helvetica neue",helvetica,ubuntu,roboto,noto,"segoe ui",arial,sans-serif;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+.main-content {
 	margin-left: 30%;
 	max-width: 45rem;
 }

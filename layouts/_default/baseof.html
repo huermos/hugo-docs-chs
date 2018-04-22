@@ -9,9 +9,24 @@
 	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 </head>
 <body>
-	<div class="container">
+	<nav class="nav">
+		<div class="nav-center">
+			<div class="nav-logo">
+				<a href="/">HUGO</a>
+			</div>
+			<ul class="nav-list">
+				<li><a>Update</a></li>
+				<li><a>English</a></li>
+				<li><a>Github</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="main">
 		{{ block "post" . }}
 		{{ end }}
 	</div>
+	<footer>
+		<a>hugo</a>
+	</footer>
 </body>
 </html>

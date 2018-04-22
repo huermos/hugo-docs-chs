@@ -7,9 +7,17 @@
 {{ end }}
 
 {{ define "post" }}
-	<h1>{{ .Title }}</h1>
-	<aside>{{ .Description }}</aside>
-	{{ .Content }}
-	<a class="date-translate">translate:  {{ .Params.translate }}</a>
-	<a class="date-translate">lastmod:  {{ .Lastmod.Format "2006-01-02" }}</a>
+	<article class="main-article">
+		<div class="main-contain">
+			<div class="main-nav"></div>
+			<div class="main-content">
+				<h1>{{ .Title }}</h1>
+				<aside>{{ .Description }}</aside>
+				{{ .Content }}
+				<a>translate:  {{ .Params.translate }}</a>
+				<a>lastmod:  {{ .Lastmod.Format "2006-01-02" }}</a>
+			</div>
+		</div>
+		<div class="main-update"></div>
+	</article>
 {{ end }}
