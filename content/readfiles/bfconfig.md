@@ -1,9 +1,9 @@
-## Blackfriday Options
+## Blackfriday配置
 
 `taskLists`
-: default: **`true`**<br>
-    Blackfriday flag: <br>
-    Purpose: `false` turns off GitHub-style automatic task/TODO list generation.
+: 默认值：`true`<br>
+  变量名：<br>
+  作用：`false`会停用生成GitHub风格的自动任务列表。
 
 `smartypants`
 : default: **`true`** <br>

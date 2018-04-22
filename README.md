@@ -48,6 +48,7 @@ hugo
 * render: 渲染
 * section：节
 * built-in：内置
+* flag：变量（名）
 
 ### 插入内容
 
