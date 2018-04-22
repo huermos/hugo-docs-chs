@@ -1,6 +1,6 @@
 baseURL = "localhost:1313"
 languageCode = "en-us"
-title = "Hugo中文化官方文档"
+title = "Hugo中文文档"
 
 defaultContentLanguage = "en"
 enableRobotsTXT = true

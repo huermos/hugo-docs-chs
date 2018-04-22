@@ -6,9 +6,9 @@
   作用：`false`会停用生成GitHub风格的自动任务列表。
 
 `smartypants`
-: default: **`true`** <br>
-    Blackfriday flag: **`HTML_USE_SMARTYPANTS`** <br>
-    Purpose: `false` disables smart punctuation substitutions, including smart quotes, smart dashes, smart fractions, etc. If `true`, it may be fine-tuned with the `angledQuotes`, `fractions`, `smartDashes`, and `latexDashes` flags (see below).
+: 默认值：`true`<br>
+  变量名：`HTML_USE_SMARTYPANTS`<br>
+  作用：`false`会禁用智能标点符号替换，包括引号，破折号和分数等。启用（`true`）后则可以使用`angledQuotes`，`fractions`，`smartDashes`和`latexDashes`进行微调（见下文）。
 
 `smartypantsQuotesNBSP`
 : default: **`false`** <br>

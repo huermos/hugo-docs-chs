@@ -6,24 +6,32 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/md.css">
 	<meta name="keywords" content="hugo, blog, docs" />
-	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+	<title>{{ block "title" . }}{{ end }}</title>
 </head>
 <body>
 	<nav class="nav">
 		<div class="nav-center">
 			<div class="nav-logo">
-				<a href="/">HUGO</a>
+				<a href="/">HUGO中文文档</a>
 			</div>
 			<ul class="nav-list">
-				<li><a>Update</a></li>
-				<li><a>English</a></li>
-				<li><a>Github</a></li>
+				<li><a href="/">更新了啥</a></li>
+				<li><a href="https://gohugo.io/documentation/">英文文档</a></li>
+				<li><a href="https://github.com/huermos/hugo-docs-chs">Github</a></li>
 			</ul>
 		</div>
 	</nav>
 	<div class="main">
-		{{ block "post" . }}
-		{{ end }}
+		<article class="main-article">
+			<div class="main-contain">
+				<div class="main-nav"></div>
+				<div class="main-content">
+					{{ block "post" . }}
+					{{ end }}
+				</div>
+			</div>
+			<div class="main-update"></div>
+		</article>
 	</div>
 	<footer>
 		<a>hugo</a>
