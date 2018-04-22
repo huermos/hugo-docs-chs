@@ -1,4 +1,4 @@
-# Hugo中文化官方文档
+# Hugo中文文档
 
 ## 介绍
 
@@ -14,7 +14,7 @@ hugo
 
 英文官方文档请参阅[Hugo Documentation](https://gohugo.io/documentation/)。
 
-**目前Hugo中文文档仍在翻译中。**待完全翻译完毕后将不定期更新。
+**目前Hugo中文文档仍在翻译中。** 待完全翻译完毕后将不定期更新。
 
 ## 协助
 
