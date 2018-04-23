@@ -171,7 +171,7 @@ rssLimit (unlimited)
 : RSS信源（Feed）的最大数量。
 
 sectionPagesMenu ("")
-: 请参阅[简单章节目录](/templates/menu-templates/#简单章节目录)
+: 请参阅[简单章节目录](/templates/menu-templates/#简单章节目录)。
 
 sitemap
 : 默认的[网站地图配置](/templates/sitemap-template/#配置-sitemap-xml)。
@@ -210,14 +210,14 @@ watch (false)
 : 监视文件系统的变化，并在需要时重新创建。
 
 > 如果你在类Unix系统上使用Hugo，以下是一个从命令行查找配置选项的快捷方式：
-
+> 
 ```
 cd ~/sites/yourhugosite
 hugo config | grep emoji
 ```
-
-运行后会输出：
-
+> 
+> 运行后会输出：
+> 
 ```
 enableemoji: true
 ```
@@ -340,7 +340,7 @@ Hugo默认将Blackfriday配置为更符合常理的参数。
 
 然而，如果你对Markdown有特殊需求，Hugo也公开了一部分Blackfriday行为选项来供你更改。下表列出了Hugo可用的选项，用来与Blackfriday源码（[html.go](https://github.com/russross/blackfriday/blob/master/html.go)和[markdown.go](https://github.com/russross/blackfriday/blob/master/markdown.go)）中的变量名匹配。
 
-对应的配置列表如下：
+以下是对应的配置列表：
 
 {{< readfile file="/content/readfiles/bfconfig.md" markdown="true" >}}
 
