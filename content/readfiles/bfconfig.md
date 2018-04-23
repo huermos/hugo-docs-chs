@@ -11,20 +11,20 @@
   作用：`false`会禁用智能标点符号替换，包括引号，破折号和分数等。启用（`true`）后则可以使用`angledQuotes`，`fractions`，`smartDashes`和`latexDashes`进行微调（见下文）。
 
 `smartypantsQuotesNBSP`
-: default: **`false`** <br>
-    Blackfriday flag: **`HTML_SMARTYPANTS_QUOTES_NBSP`** <br>
-    Purpose: `true` enables French style Guillemets with non-breaking space inside the quotes.
+: 默认值：`false`<br>
+  变量名：`HTML_SMARTYPANTS_QUOTES_NBSP`<br>
+  作用：`true`将不会在书名号（French Guillemets，即« »）内插入空格。
 
 `angledQuotes`
-: default: **`false`**<br>
-    Blackfriday flag: **`HTML_SMARTYPANTS_ANGLED_QUOTES`**<br>
-    Purpose: `true` enables smart, angled double quotes. Example: "Hugo" renders to «Hugo» instead of “Hugo”.
+: 默认值：`false`<br>
+  变量名：`HTML_SMARTYPANTS_ANGLED_QUOTES`<br>
+  作用：`true`会自动将引号（" "）渲染为书名号（Angled Double Quotes，即« »）而不是引号（“ ”）。
 
 `fractions`
-: default: **`true`**<br>
-    Blackfriday flag: **`HTML_SMARTYPANTS_FRACTIONS`** <br>
-    Purpose: <code>false</code> disables smart fractions.<br>
-    Example: `5/12` renders to <sup>5</sup>&frasl;<sub>12</sub>(<code>&lt;sup&gt;5&lt;/sup&gt;&amp;frasl;&lt;sub&gt;12&lt;/sub&gt;</code>).<br> <strong>Caveat:</strong> Even with <code>fractions = false</code>, Blackfriday still converts `1/2`, `1/4`, and `3/4` respectively to ½ (<code>&amp;frac12;</code>), ¼ (<code>&amp;frac14;</code>) and ¾ (<code>&amp;frac34;</code>), but only these three.</small>
+: 默认值：`true`<br>
+  变量名：`HTML_SMARTYPANTS_FRACTIONS`<br>
+  作用：`false`会禁用智能分数。<br>
+  示例：`5/12`会渲染成<sup>5</sup>&frasl;<sub>12</sub>（&lt;sup&gt;5&lt;/sup&gt;&amp;frasl;&lt;sub&gt;12&lt;/sub&gt;）。**注意**，即使此值为`false`，Blackfriday依然会**仅将**`1/2`，`1/4`，`3/4`三个分数渲染为½，¼，¾。
 
 `smartDashes`
 : default: **`true`** <br>
