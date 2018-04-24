@@ -27,9 +27,9 @@
   示例：`5/12`会渲染成<sup>5</sup>&frasl;<sub>12</sub>（&lt;sup&gt;5&lt;/sup&gt;&amp;frasl;&lt;sub&gt;12&lt;/sub&gt;）。**注意**，即使此值为`false`，Blackfriday依然会**仅将**`1/2`，`1/4`，`3/4`三个分数渲染为½，¼，¾。
 
 `smartDashes`
-: default: **`true`** <br>
-    Blackfriday flag: **`HTML_SMARTY_DASHES`** <br>
-    Purpose: `false` disables smart dashes; i.e., the conversion of multiple hyphens into an en-dash or em-dash. If `true`, its behavior can be modified with the `latexDashes` flag below.
+: 默认值：`true`<br>
+  变量名：`HTML_SMARTY_DASHES`<br>
+  作用：`false`会禁用智能破折号。例如，会将连字符（-）转换为en破折号（–）或em破折号（—）。启用（`true`）后可以使用`latexDashes`进行微调（见下文）。
 
 `latexDashes`
 : default: **`true`** <br>
