@@ -1,19 +1,28 @@
 ---
-title: 目录结构
-linktitle: 目录结构
-description: Hugo使用CLI创建了一个目录结构。通过编译这个目录来生成一个完整的网站。
-date: 2018-02-27
-translate: 2018-04-24
-lastmod: 2018-04-24
-translator: huermos
+title: Directory Structure
+linktitle: Directory Structure
+description: Hugo's CLI scaffolds a project directory structure and then takes that single directory and uses it as the input to create a complete website.
+date: 2017-01-02
+publishdate: 2017-02-01
+lastmod: 2017-03-09
+categories: [getting started,fundamentals]
+keywords: [source, organization, directories]
+menu:
+  docs:
+    parent: "getting-started"
+    weight: 50
 weight: 50
+sections_weight: 50
+draft: false
+aliases: [/overview/source-directory/]
+toc: true
 ---
 
-## 新的网站脚手架
+## New Site Scaffolding
 
 {{< youtube sB0HLHjgQ7E >}}
 
-在命令行中运行`hugo new site`将会创建一个包含以下元素的目录结构：
+Running the `hugo new site` generator from the command line will create a directory structure with the following elements:
 
 ```
 .
@@ -26,9 +35,10 @@ weight: 50
 └── themes
 ```
 
-## 目录结构解释
 
-以下是Hugo文档中每个最高级目录的概览，点击目录名即可转向其详细介绍链接。
+## Directory Structure Explained
+
+The following is a high-level overview of each of the directories with links to each of their respective sections within the Hugo docs.
 
 [`archetypes`](/content-management/archetypes/)
 : You can create new content files in Hugo using the `hugo new` command.

@@ -2,7 +2,9 @@
 title: .Scratch
 description: Acts as a "scratchpad" to allow for writable page- or shortcode-scoped variables.
 godocref:
-date: 2018-04-20
+date: 2017-02-01
+publishdate: 2017-02-01
+lastmod: 2017-02-01
 keywords: [iteration]
 categories: [functions]
 menu:

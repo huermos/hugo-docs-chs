@@ -4,7 +4,7 @@ linktitle: 配置
 description: 如何配置你的Hugo站点。
 date: 2018-04-17
 translate: 2018-04-18
-lastmod: 2018-04-23
+lastmod: 2018-04-24
 translator: huermos
 weight: 60
 ---

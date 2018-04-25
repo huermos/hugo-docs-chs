@@ -34,6 +34,7 @@ p {
 /*简要*/
 aside {
   margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
   border-top: solid 0.125rem #555;
   padding-top: 1rem;
   color: #666;
