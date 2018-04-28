@@ -31,8 +31,7 @@ weight: 50
 以下是Hugo文档中每个最高级目录的概览，点击目录名即可转向其详细介绍链接。
 
 [`archetypes`](/content-management/archetypes/)
-: You can create new content files in Hugo using the `hugo new` command.
-By default, Hugo will create new content files with at least `date`, `title` (inferred from the file name), and `draft = true`. This saves time and promotes consistency for sites using multiple content types. You can create your own [archetypes][] with custom preconfigured front matter fields as well.
+: 你可以使用`hugo new`来创建一个新的内容文件。默认情况下，这个内容文件的头文件中至少包含`date`，`title`和`draft = true`三个项目。这将节省你的时间并保持内容文件配置的一致性。当然，你可以在[archetypes](/content-management/archetypes/)里自定义你自己的头文件预配置。
 
 [`config.toml`](/getting-started/configuration/)
 : Every Hugo project should have a configuration file in TOML, YAML, or JSON format at the root. Many sites may need little to no configuration, but Hugo ships with a large number of [configuration directives][] for more granular directions on how you want Hugo to build your website.
@@ -58,8 +57,6 @@ From **Hugo 0.31** you can have multiple static directories.
 Hugo does not currently ship with an asset pipeline ([#3207](https://github.com/gohugoio/hugo/issues/3207)). You can solicit support from the community in the [Hugo forums](https://discourse.gohugo.io) or check out a few of the [Hugo starter kits](/tools/starter-kits/) for examples of how Hugo developers are managing static assets.
 {{% /note %}}
 
-
-[archetypes]: /content-management/archetypes/
 [configuration directives]: /getting-started/configuration/#all-variables-yaml
 [`content`]: /content-management/organization/
 [content section]: /content-management/sections/
