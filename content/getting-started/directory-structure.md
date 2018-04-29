@@ -34,10 +34,10 @@ weight: 50
 : 你可以使用`hugo new`来创建一个新的内容文件。默认情况下，这个内容文件的头文件中至少包含`date`，`title`和`draft = true`三个项目。这将节省你的时间并保持内容文件配置的一致性。当然，你可以在[archetypes](/content-management/archetypes/)里自定义你自己的头文件预配置。
 
 [`config.toml`](/getting-started/configuration/)
-: Every Hugo project should have a configuration file in TOML, YAML, or JSON format at the root. Many sites may need little to no configuration, but Hugo ships with a large number of [configuration directives][] for more granular directions on how you want Hugo to build your website.
+: 每一个Hugo项目的根目录下都有一个用TOML，YAML或JSON写成的配置文件。尽管一些网站项目不需要这个配置文件，或者只需要其中的一小部分，但Hugo依然提供了大量的[配置参数](/getting-started/configuration/#配置参数)来帮助你构建你的网站。
 
-[`content`][]
-: All content for your website will live inside this directory. Each top-level folder in Hugo is considered a [content section][]. For example, if your site has three main sections---`blog`, `articles`, and `tutorials`---you will have three directories at `content/blog`, `content/articles`, and `content/tutorials`. Hugo uses sections to assign default [content types][].
+[`content`](/content-management/organization/)
+: 你的所有内容文件都位于这个目录中。其中的每个一级目录都被视作Hugo的[内容部分](/content-management/sections/)。例如，如果你的网站包含三个部分：`blog`，`articles`和`tutorials`，那么你就需要拥有`content/blog`，`content/articles`和`content/tutorials`这三个目录。他们遵循默认的[内容类型](/content-management/types/)。
 
 [`data`](/templates/data-templates/)
 : This directory is used to store configuration files that can be
@@ -57,7 +57,6 @@ From **Hugo 0.31** you can have multiple static directories.
 Hugo does not currently ship with an asset pipeline ([#3207](https://github.com/gohugoio/hugo/issues/3207)). You can solicit support from the community in the [Hugo forums](https://discourse.gohugo.io) or check out a few of the [Hugo starter kits](/tools/starter-kits/) for examples of how Hugo developers are managing static assets.
 {{% /note %}}
 
-[configuration directives]: /getting-started/configuration/#all-variables-yaml
 [`content`]: /content-management/organization/
 [content section]: /content-management/sections/
 [content types]: /content-management/types/
