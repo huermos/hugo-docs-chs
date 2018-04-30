@@ -51,6 +51,7 @@ hugo
 * section：节/部分
 * built-in：内置
 * flag：变量（名）
+* partials：局部
 
 ### 插入内容
 

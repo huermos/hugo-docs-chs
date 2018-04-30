@@ -1,30 +1,43 @@
 ---
-title: 安装Hugo
-linktitle: 安装Hugo
-description: 在macOS，Windows，Linux，FreeBSD或其他任何可运行Go编译器工具链的设备上安装Hugo。
-date: 2018-02-27
-translate: 2018-04-29
-lastmod: 2018-04-29
-translator: huermos
+title: Install Hugo
+linktitle: Install Hugo
+description: Install Hugo on macOS, Windows, Linux, FreeBSD, and on any machine where the Go compiler tool chain can run.
+date: 2016-11-01
+publishdate: 2016-11-01
+lastmod: 2018-01-02
+categories: [getting started,fundamentals]
+authors: ["Michael Henderson"]
+keywords: [install,pc,windows,linux,macos,binary,tarball]
+menu:
+  docs:
+    parent: "getting-started"
+    weight: 30
 weight: 30
+sections_weight: 30
+draft: false
+aliases: [/tutorials/installing-on-windows/,/tutorials/installing-on-mac/,/overview/installing/,/getting-started/install,/install/]
+toc: true
 ---
 
-> 众所周知，Hugo是使用Go语言开发的，但事实上，你并不需要安装Go来使用Hugo。你只需要一个预编译的二进制文件即可。
 
-Hugo使用[Go](https://golang.org/)语言开发，支持多种平台。在[Github](https://github.com/gohugoio/hugo/releases/)上可以下载到最新的发行版本。
+{{% note %}}
+There is lots of talk about "Hugo being written in Go", but you don't need to install Go to enjoy Hugo. Just grab a precompiled binary!
+{{% /note %}}
 
-Hugo目前为以下平台提供预编译的文件：
+Hugo is written in [Go](https://golang.org/) with support for multiple platforms. The latest release can be found at [Hugo Releases][releases].
 
-* x64，i386或ARM架构的macOS（Darwin）
+Hugo currently provides pre-built binaries for the following:
+
+* macOS (Darwin) for x64, i386, and ARM architectures
 * Windows
 * Linux
 * FreeBSD
 
-Hugo也可以在任何可运行Go编译器工具链的地方进行编译，如DragonFly BSD，OpenBSD，Plan 9和Solaris等其他操作系统上。有关操作系统和架构的支持情况，请参阅https://golang.org/doc/install/source 。
+Hugo may also be compiled from source wherever the Go compiler tool chain can run; e.g., on other operating systems such as DragonFly BSD, OpenBSD, Plan&nbsp;9, Solaris, and others. See <https://golang.org/doc/install/source> for the full set of supported combinations of target operating systems and compilation architectures.
 
-## 快速安装
+## Quick Install
 
-### 二进制 (跨平台)
+### Binary (Cross-platform)
 
 Download the appropriate version for your platform from [Hugo Releases][releases]. Once downloaded, the binary can be run from anywhere. You don't need to install it into a global location. This works well for shared hosts and other systems where you don't have a privileged account.
 
@@ -483,7 +496,7 @@ Now that you've installed Hugo, read the [Quick Start guide][quickstart] and exp
 [pygments]: http://pygments.org
 [quickstart]: /getting-started/quick-start/
 [redhatforum]: https://discourse.gohugo.io/t/solved-fedora-copr-repository-out-of-service/2491
-
+[releases]: https://github.com/gohugoio/hugo/releases
 [snaps]: http://snapcraft.io/docs/core/install
 [windowsarch]: https://esupport.trendmicro.com/en-us/home/pages/technical-support/1038680.aspx
 [Windows Environment Variables Editor]: http://eveditor.com/

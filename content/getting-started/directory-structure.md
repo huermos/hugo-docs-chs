@@ -4,7 +4,7 @@ linktitle: 目录结构
 description: Hugo使用CLI创建了一个目录结构。通过编译这个目录来生成一个完整的网站。
 date: 2018-02-27
 translate: 2018-04-24
-lastmod: 2018-04-24
+lastmod: 2018-04-29
 translator: huermos
 weight: 50
 ---
@@ -45,30 +45,9 @@ weight: 50
 [`layouts`](/templates/)
 : 此目录用来储存`.html`格式的模板，它们用来定义网站渲染后的外观。模板包括你的[主页](/templates/homepage/)，[列表页面](/templates/list/)，[分类模板](templates/taxonomy-templates/)，[局部模板](/templates/partials/)和[单页模板](/templates/single-page-templates/)等等。
 
-[`static`][]
-: Stores all the static content for your future website: images, CSS, JavaScript, etc. When Hugo builds your site, all assets inside your static directory are copied over as-is. A good example of using the `static` folder is for [verifying site ownership on Google Search Console][searchconsole], where you want Hugo to copy over a complete HTML file without modifying its content.
+[`static`](/content-management/static-files/)
+: 此目录用来储存网站的静态内容，包括图片，CSS和JavaSaript等等。当Hugo构建你的网站时，静态目录中的所有资源都将按原样显示。例如你可以用来[在Google Search Console中验证网站所有权](https://support.google.com/analytics/answer/1142414)，Hugo会拷贝完整的HTML文件且不修改任何内容。
 
-```
-从**Hugo 0.31**开始你可以拥有多个静态（static）目录。
-```
+> 从**Hugo 0.31**开始你可以拥有多个静态（static）目录。
 
-{{% note %}}
-Hugo does not currently ship with an asset pipeline ([#3207](https://github.com/gohugoio/hugo/issues/3207)). You can solicit support from the community in the [Hugo forums](https://discourse.gohugo.io) or check out a few of the [Hugo starter kits](/tools/starter-kits/) for examples of how Hugo developers are managing static assets.
-{{% /note %}}
-
-[`content`]: /content-management/organization/
-[content section]: /content-management/sections/
-[content types]: /content-management/types/
-[data templates]: /templates/data-templates/
-[homepage]: /templates/homepage/
-[`layouts`]: /templates/
-[`static`]: /content-management/static-files/
-[lists]: /templates/list/
-[pagevars]: /variables/page/
-[partials]: /templates/partials/
-[searchconsole]: https://support.google.com/analytics/answer/1142414?hl=en
-[singles]: /templates/single-page-templates/
-[starters]: /tools/starter-kits/
-[taxonomies]: /content-management/taxonomies/
-[taxonomy templates]: /templates/taxonomy-templates/
-[types]: /content-management/types/
+> Hugo目前尚没有配备Asset Pipeline（[#3207](https://github.com/gohugoio/hugo/issues/3207)）。你可以在[Hugo论坛](https://discourse.gohugo.io)中寻求社区的支持，或参阅[Hugo入门工具包](/tools/starter-kits/)了解Hugo的开发者如何管理静态资源。
