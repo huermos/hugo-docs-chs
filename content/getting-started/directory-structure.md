@@ -37,21 +37,20 @@ weight: 50
 : 每一个Hugo项目的根目录下都有一个用TOML，YAML或JSON写成的配置文件。尽管一些网站项目不需要这个配置文件，或者只需要其中的一小部分，但Hugo依然提供了大量的[配置参数](/getting-started/configuration/#配置参数)来帮助你构建你的网站。
 
 [`content`](/content-management/organization/)
-: 你的所有内容文件都位于这个目录中。其中的每个一级目录都被视作Hugo的[内容部分](/content-management/sections/)。例如，如果你的网站包含三个部分：`blog`，`articles`和`tutorials`，那么你就需要拥有`content/blog`，`content/articles`和`content/tutorials`这三个目录。他们遵循默认的[内容类型](/content-management/types/)。
+: 你的所有内容文件都位于这个目录中。其中的每个一级目录都被视作Hugo的[内容部分](/content-management/sections/)。例如，如果你的网站包含三个部分：`blog`，`articles`和`tutorials`，那么你就需要拥有`content/blog`，`content/articles`和`content/tutorials`这三个目录。他们都遵循默认的[内容类型](/content-management/types/)。
 
 [`data`](/templates/data-templates/)
-: This directory is used to store configuration files that can be
-used by Hugo when generating your website. You can write these files in YAML, JSON, or TOML format. In addition to the files you add to this folder, you can also create [data templates][] that pull from dynamic content.
+: 此目录用来储存再生成网站时的配置文件。你可以使用TOML，YAML或JSON来编辑它们。除了你般存在这个文件夹中的文件意外，你也可以创建从动态内容中拉取的[数据模板](/templates/data-templates/)。
 
-[`layouts`][]
-: Stores templates in the form of `.html` files that specify how views of your content will be rendered into a static website. Templates include [list pages][lists], your [homepage][], [taxonomy templates][], [partials][], [single page templates][singles], and more.
+[`layouts`](/templates/)
+: 此目录用来储存`.html`格式的模板，它们用来定义网站渲染后的外观。模板包括你的[主页](/templates/homepage/)，[列表页面](/templates/list/)，[分类模板](templates/taxonomy-templates/)，[局部模板](/templates/partials/)和[单页模板](/templates/single-page-templates/)等等。
 
 [`static`][]
 : Stores all the static content for your future website: images, CSS, JavaScript, etc. When Hugo builds your site, all assets inside your static directory are copied over as-is. A good example of using the `static` folder is for [verifying site ownership on Google Search Console][searchconsole], where you want Hugo to copy over a complete HTML file without modifying its content.
 
-{{% note %}}
-From **Hugo 0.31** you can have multiple static directories.
-{{% /note %}}
+```
+从**Hugo 0.31**开始你可以拥有多个静态（static）目录。
+```
 
 {{% note %}}
 Hugo does not currently ship with an asset pipeline ([#3207](https://github.com/gohugoio/hugo/issues/3207)). You can solicit support from the community in the [Hugo forums](https://discourse.gohugo.io) or check out a few of the [Hugo starter kits](/tools/starter-kits/) for examples of how Hugo developers are managing static assets.
