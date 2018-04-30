@@ -1,7 +1,7 @@
 ---
 title: 目录结构
 linktitle: 目录结构
-description: Hugo使用CLI创建了一个目录结构。通过编译这个目录来生成一个完整的网站。
+description: Hugo使用CLI创建目录结构。通过编译这个目录来生成一个完整的网站。
 date: 2018-02-27
 translate: 2018-04-24
 lastmod: 2018-04-29
