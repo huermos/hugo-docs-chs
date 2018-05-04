@@ -26,36 +26,36 @@ Hugo也可以在任何可运行Go编译器工具链的地方进行编译，如Dr
 
 ### 二进制 (跨平台)
 
-Download the appropriate version for your platform from [Hugo Releases][releases]. Once downloaded, the binary can be run from anywhere. You don't need to install it into a global location. This works well for shared hosts and other systems where you don't have a privileged account.
+首先进入Hugo的[发布页面](https://github.com/gohugoio/hugo/releases/)下载对应平台的版本。此文件可以在任何地方运行，因此你不需要放到特定的目录。另外在没有特权账户的共享主机和其他系统上也可以运行。
 
-Ideally, you should install it somewhere in your `PATH` for easy use. `/usr/local/bin` is the most probable location.
+理想情况下，你应该把它放在你的`PATH`目录中，通常为`/usr/local/bin`。
 
 ### Homebrew (macOS)
 
-If you are on macOS and using [Homebrew][brew], you can install Hugo with the following one-liner:
+如果你在macOS中使用[Homebrew](https://brew.sh/)，你只需要一行命令就可以完成安装：
 
-{{< code file="install-with-homebrew.sh" >}}
+```
 brew install hugo
-{{< /code >}}
+```
 
-For more detailed explanations, read the installation guides that follow for installing on macOS and Windows.
+详细说明请参阅下列macOS与Windows的安装指南。
 
 ### Chocolatey (Windows)
 
-If you are on a Windows machine and use [Chocolatey][] for package management, you can install Hugo with the following one-liner:
+如果你在Windows中使用[Chocolatey](https://chocolatey.org/)进行软件包管理，你只需要一行命令就可以完成安装：
 
-{{< code file="install-with-chocolatey.ps1" >}}
+```
 choco install hugo -confirm
-{{< /code >}}
+```
 
-### Source
+### 源码
 
-#### Prerequisite Tools
+#### 必备工具
 
-* [Git][installgit]
-* [Go (latest or previous version)][installgo]
+* [Git](http://git-scm.com/)
+* [Go（新旧版皆可）](https://golang.org/dl/)
 
-#### Vendored Dependencies
+#### 依赖关系
 
 Hugo uses [dep][] to vendor dependencies, but we don't commit the vendored packages themselves to the Hugo git repository. Therefore, a simple `go get` is *not* supported because the command is not vendor aware.
 
